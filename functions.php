@@ -28,8 +28,8 @@ $about = new Typecho_Widget_Helper_Form_Element_Text('about', NULL,NULL, _t('abo
     $form->addInput($about);
 $css = new Typecho_Widget_Helper_Form_Element_Radio('css',
 array(
-'1' => _t('1.在大屏幕显示宽的SideBar，在中屏幕显示窄的SideBar，在小屏幕现实抽屉SideBar（宽）'),
-'2' => _t('2.在大屏幕和中屏幕显示窄的SideBar，在小屏幕现实抽屉SideBar（窄）'),
+'1' => _t('1.在大屏幕显示宽的SideBar，在中屏幕显示窄的SideBar，在小屏幕显示抽屉SideBar（宽）'),
+'2' => _t('2.在大屏幕和中屏幕显示窄的SideBar，在小屏幕显示抽屉SideBar（窄）'),
 '3' => _t('3.在所有屏幕显示抽屉SideBar（宽）'),
 '4' => _t('4.在所有屏幕显示抽屉SideBar（窄）'),
 ),
