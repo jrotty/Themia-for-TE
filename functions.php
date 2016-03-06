@@ -1,0 +1,173 @@
+<?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+define("Themia_Version", "2.4.0");
+function themeConfig($form) {
+  echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
+  //网站LOGO
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('博主头像地址'), _t('logo头像地址，不填写默认内置头像，这个建议用正方形的图片√'));
+    $form->addInput($logoUrl);
+  //背景
+    $bgs = new Typecho_Widget_Helper_Form_Element_Radio('bgs',array('1' => _t('博客背景使用图片'),'2' => _t('博客背景使用纯色')),'1',_t('背景设置'),_t("选择这里的背景方案，对应填写下方的‘背景图or色’，这里默认是使用图片,设置图片好看，设置颜色提高网速，看个人情况设置吧"));
+    $form->addInput($bgs); 
+
+    $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('背景图or色'), _t('背景设置如果设置图片，这里就填写图片地址，如http://qqdie.com/1.jpg,背景设置如果选择的是颜色，这里就填写颜色代码如#000,这里如果不填写则默认图片或者颜色#444444'));
+    $form->addInput($bgUrl);   
+
+    $weibo = new Typecho_Widget_Helper_Form_Element_Text('weibo', NULL,'http://weibo.com/jinzeboke', _t('新浪微博地址'), _t('填写你的新浪微博主页地址到菜单目录中'));
+    $form->addInput($weibo);
+
+$Categories = new Typecho_Widget_Helper_Form_Element_Text('Categories', NULL,NULL, _t('Categories分类归档地址'), _t('新建独立页面，选择模板Categories，这里填入独立页面的完整地址'));
+    $form->addInput($Categories);
+
+$Archive = new Typecho_Widget_Helper_Form_Element_Text('Archive', NULL,NULL, _t('Archive时间归档地址'), _t('新建独立页面，选择模板Archive，这里填入独立页面的完整地址'));
+    $form->addInput($Archive);
+
+$links = new Typecho_Widget_Helper_Form_Element_Text('links', NULL,NULL, _t('links友情链接地址'), _t('新建独立页面，写上朋友的链接，作为友情链接页面，然后把页面地址填入这里'));
+    $form->addInput($links);
+$about = new Typecho_Widget_Helper_Form_Element_Text('about', NULL,NULL, _t('about链接地址'), _t('新建独立页面，写上关于自己的属性，然后把页面地址填入这里'));
+    $form->addInput($about);
+$css = new Typecho_Widget_Helper_Form_Element_Radio('css',
+array(
+'1' => _t('1.在大屏幕显示宽的SideBar，在中屏幕显示窄的SideBar，在小屏幕现实抽屉SideBar（宽）'),
+'2' => _t('2.在大屏幕和中屏幕显示窄的SideBar，在小屏幕现实抽屉SideBar（窄）'),
+'3' => _t('3.在所有屏幕显示抽屉SideBar（宽）'),
+'4' => _t('4.在所有屏幕显示抽屉SideBar（窄）'),
+),
+'1',
+_t('风格选择'), _t('这里的风格指的是网站整体风格，文章风格可通过自定义字段字段名ys和字段值来控制，实现对单独的一篇文章的风格重定义（字段值就是上边对应的数字，如风格3，就在文章字段名填入ys，字段值填入3即可），文章封面效果也是用自定义字段，字段名fm，字段值就是封面的图片地址，启动封面效果的文章风格会变更为3（优先级高）√')); 
+$form->addInput($css->multiMode());
+
+    //工具开关
+    $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
+    array('kp' => _t('文章中加入跨屏浏览二维码，支付宝打赏，及文章版权声明')
+,
+	'bjq' => _t('文章内容增强，加入最后编辑时间'),
+	'Showfull' => _t('手机浏览器强制全屏，仅限于uc和QQ浏览器')
+,'Showcolor' => _t('手机谷歌浏览器状态栏颜色渲染为白色'),
+	'kiana' => _t('kiana封印解除'),
+	'simg' => _t('全局不显示文章缩略图')
+,),
+    array('Showcolor','bjq'), _t('工具开关'));
+    $form->addInput($sidebarBlock->multiMode());
+
+  $zfbUrl = new Typecho_Widget_Helper_Form_Element_Text('zfbUrl', NULL, NULL, _t('支付宝付款二维码'), _t('这里添加付款二维码的图片地址，不添加则默认jrotty的支付宝二维码'));
+    $form->addInput($zfbUrl);
+
+  $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择第一项，同时禁用Star插件，以免重复计数【不禁用的话，访问一次，计数器会加2】"));
+    $form->addInput($jsq); 
+    $bqg = new Typecho_Widget_Helper_Form_Element_Radio('bqg',array('1' => _t('不开启版权狗'),'2' => _t('开启版权声明')),'1',_t('版权声明'),_t("复制文章内容时，会出现版权声明提示，并且复制的内容自带版权声明。"));
+    $form->addInput($bqg); 
+ //建站时间
+    $time = new Typecho_Widget_Helper_Form_Element_Text('time', NULL, '2015/06/06', _t('博客成立时间'), _t('在这里填入博客的成立时间,格式要求，如填入“2015/06/06”。'));
+    $form->addInput($time);
+
+   //统计代码
+$tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL,'统计代码', _t('统计代码'), _t('填入cnzz等第三方统计代码'));
+$form->addInput($tongji);
+
+}
+function get_post_view($archive)
+{
+    $cid    = $archive->cid;
+    $db     = Typecho_Db::get();
+    $prefix = $db->getPrefix();
+    if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
+        $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+        echo 0;
+        return;
+    }
+    $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
+    if ($archive->is('single')) {
+       $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
+    }
+    echo $row['views'];
+}
+function timer_start() {
+global $timestart;
+$mtime = explode( ' ', microtime() );
+$timestart = $mtime[1] + $mtime[0];
+return true;
+}
+timer_start();
+ 
+function timer_stop( $display = 0, $precision = 3 ) {
+global $timestart, $timeend;
+$mtime = explode( ' ', microtime() );
+$timeend = $mtime[1] + $mtime[0];
+$timetotal = $timeend - $timestart;
+$r = number_format( $timetotal, $precision );
+if ( $display )
+echo $r;
+return $r;
+}
+
+/** 输出文章缩略图 */
+function showThumbnail($widget)
+{ 
+    // 当文章无图片时的默认缩略图
+    $rand = rand(1,52); // 随机 1-52 张缩略图
+    $random = $widget->widget('Widget_Options')->themeUrl . '/img/sj/' . $rand . '.jpg'; // 随机缩略图路径
+   // $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.gif'; // 若只想要一张默认缩略图请删除本行开头的"//"
+
+    $attach = $widget->attachments(1)->attachment;
+    $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i'; 
+    
+
+if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
+         echo $thumbUrl[1][0];
+    } else     if ($attach->isImage) {
+      echo $attach->url; 
+    } else {
+        echo $random;
+    }
+}
+
+function theNext($widget, $default = NULL)
+{
+$db = Typecho_Db::get();
+$sql = $db->select()->from('table.contents')
+->where('table.contents.created > ?', $widget->created)
+->where('table.contents.status = ?', 'publish')
+->where('table.contents.type = ?', $widget->type)
+->where('table.contents.password IS NULL')
+->order('table.contents.created', Typecho_Db::SORT_ASC)
+->limit(1);
+$content = $db->fetchRow($sql);
+
+if ($content) {
+$content = $widget->filter($content);
+$link = '<a class="post-action-btn btn btn--default tooltip--top" href="' . $content['permalink'] . '"  data-tooltip="' . $content['title'] . '"><span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i></a>';
+echo $link;
+} else {
+echo $default;
+}
+}
+ 
+/**
+* 显示上一篇
+*
+* @access public
+* @param string $default 如果没有下一篇,显示的默认文字
+* @return void
+*/
+function thePrev($widget, $default = NULL)
+{
+$db = Typecho_Db::get();
+$sql = $db->select()->from('table.contents')
+->where('table.contents.created < ?', $widget->created)
+->where('table.contents.status = ?', 'publish')
+->where('table.contents.type = ?', $widget->type)
+->where('table.contents.password IS NULL')
+->order('table.contents.created', Typecho_Db::SORT_DESC)
+->limit(1);
+$content = $db->fetchRow($sql);
+ 
+if ($content) {
+$content = $widget->filter($content);
+$link = '<a class="post-action-btn btn btn--default tooltip--top" href="' . $content['permalink'] . '"  data-tooltip="' . $content['title'] . '"><i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml">PREVIOUS  </span></a>';
+echo $link;
+} else {
+echo $default;
+}
+}
