@@ -66,6 +66,19 @@ $tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL,'统计
 $form->addInput($tongji);
 
 }
+/**
+ * 解析内容以实现附件加速
+ * @access public
+ * @param string $content 文章正文
+ * @param Widget_Abstract_Contents $obj
+ */
+function parseContent($obj){
+    $options = Typecho_Widget::widget('Widget_Options');
+    if(!empty($options->src_add) && !empty($options->cdn_add)){
+        $obj->content = str_ireplace($options->src_add,$options->cdn_add,$obj->content);
+    }
+    echo trim($obj->content);
+}
 function get_post_view($archive)
 {
     $cid    = $archive->cid;
