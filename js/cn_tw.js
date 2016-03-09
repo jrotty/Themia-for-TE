@@ -1,6 +1,4 @@
-var defaultEncoding = 2; // 1: 繁體, 2: 简体
-var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
-var cookieDomain = "https://qqdie.com/";
+
 var msgToTraditionalChinese = "繁"; 
 var msgToSimplifiedChinese = "简"; 
 var translateButtonId = "translateLink"; 
