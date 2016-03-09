@@ -4,7 +4,7 @@
  * 
  * @package Themia
  * @author Jrotty
- * @version 2.4.0
+ * @version 2.5.0
  * @link http://qqdie.com
  */
 ?>
@@ -34,6 +34,64 @@
             
 <section class="postShorten-group main-content-wrap">
  
+<?php /*
+	if(is_home() && get_option('sticky_posts')){
+    $sticky = get_option('sticky_posts'); 
+    rsort( $sticky );//对数组逆向排序，即大ID在前 
+    $sticky = array_slice( $sticky, 0, 3);//输出置顶文章数，请修改5，0不要动，如果需要全部置顶文章输出，可以把这句注释掉 
+    query_posts( array( 'post__in' => $sticky, 'caller_get_posts' => 1 ) ); 
+    if (have_posts()) :while (have_posts()) : the_post();*/
+?>
+<?php if($this->_currentPage>1): ?><?php else: ?>
+<?php if($this->is('index')): ?> 
+<?php
+$db = Typecho_Db::get();
+$prefix = $db->getPrefix();
+$sticky_posts = $db->fetchAll($this->db
+	->select()->from($prefix.'contents')
+	->orWhere('cid = ?',$this->options->sticky_1)
+	->orWhere('cid = ?',$this->options->sticky_2)
+	->orWhere('cid = ?',$this->options->sticky_3)
+	->where('type = ? AND status = ? AND password IS NULL', 'post', 'publish'));
+	rsort( $sticky_posts );//对数组逆向排序，即大ID在前 
+	foreach ($sticky_posts as $sticky_posts) {
+		$result = Typecho_Widget::widget('Widget_Abstract_Contents')->push($sticky_posts);
+		$post_views = number_format($result['views']);
+		$post_title = htmlspecialchars($result['title']);
+		$post_date = date('M d,Y', $result['created']);
+		$permalink = $result['permalink'];
+		/*if($post_views > $this->options->view_num){echo 'HOT';} else {echo ''.$post_views.''' VIEW';};*/
+		echo '<article class="postShorten" itemscope="" itemtype="http://schema.org/BlogPosting" id="article">   
+
+                        
+                     
+      
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                               <span style="color:red">[置顶] </span> <a class="link-unstyled" href="'.$permalink.'">'.$post_title.'</a>
+                        
+                    </h1>
+                
+                </div>
+                
+            </div>
+            
+                  
+          
+                             
+                
+            
+        </article>'."\n\r";}
+?>
+<?php endif; ?>
+
+<?php
+/*global $query_string;
+  query_posts( $query_string . '&ignore_sticky_posts=1' );*/
+?><?php endif; ?>
+
         <?php while($this->next()): ?>
         <?php if (!empty($this->options->sidebarBlock) && in_array('simg', $this->options->sidebarBlock)): ?>
 

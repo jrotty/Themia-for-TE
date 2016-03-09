@@ -64,7 +64,11 @@ style="background-color:<?php $this->options->bgUrl();?>;"
 <?php }else{ ?>style="background-color: #444444;"<?php };?>></div>
 <?php endif; ?>
 
-<!--- 简繁转换开始 --->
+<!--- 简繁转换开始 ---><script>
+var defaultEncoding = 2; // 1: 繁體, 2: 简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "<?php $this->options->siteUrl(); ?>";
+</script>
 <script type="text/javascript" src="<?php $this->options->themeUrl('js/cn_tw.js'); ?>"></script>
 <!--- 简繁转换结束 --->
 

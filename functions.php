@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "2.4.0");
+define("Themia_Version", "2.5.0");
 function themeConfig($form) {
   echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
@@ -13,6 +13,17 @@ function themeConfig($form) {
     $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('背景图or色'), _t('背景设置如果设置图片，这里就填写图片地址，如http://qqdie.com/1.jpg,背景设置如果选择的是颜色，这里就填写颜色代码如#000,这里如果不填写则默认图片或者颜色#444444'));
     $form->addInput($bgUrl);   
 
+    $sticky_1 = new Typecho_Widget_Helper_Form_Element_Text('sticky_1',NULL, NULL,'置顶文章ID', '填写对应主题的 id 即可使某些分类的文章在置顶首页显示（例如 1）。');
+    $sticky_1->input->setAttribute('class', 'mini');
+    $form->addInput($sticky_1->addRule('isInteger', '请填入数字'));
+
+    $sticky_2 = new Typecho_Widget_Helper_Form_Element_Text('sticky_2',NULL, NULL,'置顶文章ID', '填写对应主题的 id 即可使某些分类的文章在置顶首页显示（例如 1）。');
+    $sticky_2->input->setAttribute('class', 'mini');
+    $form->addInput($sticky_2->addRule('isInteger', '请填入数字'));
+
+    $sticky_3 = new Typecho_Widget_Helper_Form_Element_Text('sticky_3',NULL, NULL,'置顶文章ID', '填写对应主题的 id 即可使某些分类的文章在置顶首页显示（例如 1）。');
+    $sticky_3->input->setAttribute('class', 'mini');
+$form->addInput($sticky_3->addRule('isInteger', '请填入数字'));
     $weibo = new Typecho_Widget_Helper_Form_Element_Text('weibo', NULL,'http://weibo.com/jinzeboke', _t('新浪微博地址'), _t('填写你的新浪微博主页地址到菜单目录中'));
     $form->addInput($weibo);
 
