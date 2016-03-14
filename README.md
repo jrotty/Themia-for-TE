@@ -5,7 +5,7 @@
 
 文章支持的自定义字段详细见http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual
 
-2016-03-014更新
+2016-03-14更新
 
 3.0.0版更新
 
