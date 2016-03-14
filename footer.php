@@ -144,6 +144,24 @@ jQuery('#qrcode').qrcode({
 
 
 <script type="text/javascript" src="<?php $this->options->themeUrl('bga.min.js'); ?>"></script><?php endif; ?> 
+
+<?php if (!empty($this->options->code) && in_array('kg', $this->options->code)): ?><?php if($this->is('post')): ?>
+<?php if (!empty($this->options->code) && in_array('hh', $this->options->code)): ?>
+<script>var pres = document.getElementsByTagName('pre');
+                for (var i = 0; i < pres.length; i++)
+                    if (pres[i].getElementsByTagName('code').length > 0)
+                        pres[i].className  = 'line-numbers';
+                </script>
+<?php endif; ?>
+<script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
+
+<?php if (!empty($this->options->code) && in_array('hh', $this->options->code) && in_array('xbq', $this->options->code)): ?>
+<script defer="defer" src="<?php $this->options->themeUrl('js/line-number-wrap-fix.js'); ?>"></script> <?php endif; ?>
+<?php endif; ?><?php endif; ?>
+
 <?php $this->footer(); ?> 
     </body>
 </html>
+
+
+

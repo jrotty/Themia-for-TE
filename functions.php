@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "2.5.0");
+define("Themia_Version", "3.0.0");
 function themeConfig($form) {
   echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
@@ -37,6 +37,10 @@ $links = new Typecho_Widget_Helper_Form_Element_Text('links', NULL,NULL, _t('lin
     $form->addInput($links);
 $about = new Typecho_Widget_Helper_Form_Element_Text('about', NULL,NULL, _t('about链接地址'), _t('新建独立页面，写上关于自己的属性，然后把页面地址填入这里'));
     $form->addInput($about);
+ $cdl = new Typecho_Widget_Helper_Form_Element_Radio('cdl',array('0' => _t('English'),'1' => _t('日本語【渣翻译】
+'),'2' => _t('中文')),'0',_t('界面语言设置'),_t("尽管英文逼格比较高，但是中文有中文的好处。此处默认是英文，因为我比较屌，所以有日文选项"));
+    $form->addInput($cdl); 
+
 $css = new Typecho_Widget_Helper_Form_Element_Radio('css',
 array(
 '1' => _t('1.在大屏幕显示宽的SideBar，在中屏幕显示窄的SideBar，在小屏幕显示抽屉SideBar（宽）'),
@@ -66,6 +70,17 @@ $form->addInput($css->multiMode());
 
   $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择第一项，同时禁用Star插件，以免重复计数【不禁用的话，访问一次，计数器会加2】"));
     $form->addInput($jsq); 
+
+    $code = new Typecho_Widget_Helper_Form_Element_Checkbox('code', 
+    array('kg' => _t('代码高亮【是否开启代码高亮功能，不开启的话，以下三个选项将成为摆设】')
+,'hh' => _t('显示行号【是否在大段代码左侧显示行号】')
+,	'qhh' => _t('强制换行【是否强制换行】'),
+	'xbq' => _t('显示标签语言【是否在大段代码右上角显示语言】')
+,),
+    array('hh','qhh','xbq'), _t('代码高亮设置'),_t("代码高亮默认关闭，如果你想使用其他代码高亮插件或者您的编辑器本身就支持代码高亮，请关闭代码高亮功能，以免造成混乱。"));
+    $form->addInput($code->multiMode());
+
+
     $bqg = new Typecho_Widget_Helper_Form_Element_Radio('bqg',array('1' => _t('不开启版权狗'),'2' => _t('开启版权声明')),'1',_t('版权声明'),_t("复制文章内容时，会出现版权声明提示，并且复制的内容自带版权声明。"));
     $form->addInput($bqg); 
  //建站时间
@@ -73,10 +88,11 @@ $form->addInput($css->multiMode());
     $form->addInput($time);
 
    //统计代码
-$tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL,'统计代码', _t('统计代码'), _t('填入cnzz等第三方统计代码'));
+$tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL,'统计代码', _t('备案信息+统计代码'), _t('填入备案信息和cnzz等第三方统计代码'));
 $form->addInput($tongji);
 
 }
+
 /**
  * 解析内容以实现附件加速
  * @access public
@@ -89,6 +105,21 @@ function parseContent($obj){
         $obj->content = str_ireplace($options->src_add,$options->cdn_add,$obj->content);
     }
     echo trim($obj->content);
+}
+function themeInit($archive)
+{
+    if ($archive->is('single'))
+    {
+        $archive->content = image_class_replace($archive->content);
+    }
+}
+
+function image_class_replace($content)
+{
+    $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>#',
+        '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3">
+</a></div>', $content);
+    return $content;
 }
 function get_post_view($archive)
 {
@@ -129,9 +160,9 @@ return $r;
 function showThumbnail($widget)
 { 
     // 当文章无图片时的默认缩略图
-    $rand = rand(1,52); // 随机 1-52 张缩略图
+    $rand = rand(1,99); // 随机 1-99 张缩略图
     $random = $widget->widget('Widget_Options')->themeUrl . '/img/sj/' . $rand . '.jpg'; // 随机缩略图路径
-   // $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.gif'; // 若只想要一张默认缩略图请删除本行开头的"//"
+   // $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.jpg'; // 若只想要一张默认缩略图请删除本行开头的"//"
 
     $attach = $widget->attachments(1)->attachment;
     $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i'; 
@@ -160,11 +191,12 @@ $content = $db->fetchRow($sql);
 
 if ($content) {
 $content = $widget->filter($content);
-$link = '<a class="post-action-btn btn btn--default tooltip--top" href="' . $content['permalink'] . '"  data-tooltip="' . $content['title'] . '"><span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
-                    <i class="fa fa-angle-right"></i></a>';
+$link = '<a class="post-action-btn btn btn--default tooltip--top" href="' . $content['permalink'] . '"  data-tooltip="' . $content['title'] . '">';
 echo $link;
 } else {
-echo $default;
+$link = '<a class="post-action-btn btn btn--disabled" target="_blank">
+';
+echo $link;
 }
 }
  
@@ -189,10 +221,12 @@ $content = $db->fetchRow($sql);
  
 if ($content) {
 $content = $widget->filter($content);
-$link = '<a class="post-action-btn btn btn--default tooltip--top" href="' . $content['permalink'] . '"  data-tooltip="' . $content['title'] . '"><i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml">PREVIOUS  </span></a>';
+$link = '<a class="post-action-btn btn btn--default tooltip--top" href="' . $content['permalink'] . '"  data-tooltip="' . $content['title'] . '">';
 echo $link;
 } else {
-echo $default;
+$link = '<a class="post-action-btn btn btn--disabled" target="_blank">
+';
+echo $link;
 }
 }
 ?>

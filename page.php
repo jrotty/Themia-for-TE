@@ -256,12 +256,13 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
-       <?php thePrev($this); ?> 
+        <?php thePrev($this); ?> <i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>前一篇<?php endif; ?></span></a>
             
           
             </li>
             <li class="post-action">
-                        <?php theNext($this); ?>
+                          <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>后编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>后一篇<?php endif; ?></span>
+                    <i class="fa fa-angle-right"></i></a>
                  </li>
         </ul>
     </nav>
@@ -327,12 +328,13 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action"> 
-              <?php thePrev($this); ?>
+               <?php thePrev($this); ?> <i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>前一篇<?php endif; ?></span></a>
                 
             </li>
  <li class="post-action">
                 
-            <?php theNext($this); ?>
+             <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>后编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>后一篇<?php endif; ?></span>
+                    <i class="fa fa-angle-right"></i></a>
                 
                
               

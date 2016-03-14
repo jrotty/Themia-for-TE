@@ -41,9 +41,15 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
  按分类归档
     <h4 class="archive-result text-color-base text-xlarge"></h4>
     <section>
-        <?php $this->widget('Widget_Metas_Category_List')
-->parse('  <a class="category category--small category--primary" href="#posts-list-{name}" data-category="{count}篇文章">{name}({count})</a> '); ?>
-        
+
+
+<?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
+    <?php while ($category->next()): ?>
+
+<a class="category category--small category--primary" href="#posts-list-<?php $category->name(); ?>" data-category="<?php $category->count(); ?>篇文章"><?php $category->name(); ?>(<?php $category->count(); ?>)</a>
+
+ <?php endwhile; ?>
+
         
     </section>
     <section class="boxes">
@@ -60,7 +66,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
 <?php while ($posts->next()): ?> 
                             <li class="archive-post">
                                 <a class="archive-post-title" href="<?php $posts->permalink(); ?>"><?php $posts->title(40); ?></a>
-                                <span class="archive-post-date">-<?php $this->date('M d,Y'); ?></span>
+                                <span class="archive-post-date">-<?php $posts->date('M d,Y'); ?></span>
                             </li>
                         
                         

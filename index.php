@@ -4,7 +4,7 @@
  * 
  * @package Themia
  * @author Jrotty
- * @version 2.5.0
+ * @version 3.0.0
  * @link http://qqdie.com
  */
 ?>
@@ -187,24 +187,46 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
         
         <div class="pagination-bar">
 
-    <ul class="pagination">
+   <ul class="pagination">
         
         <li class="pagination-prev">
-    
+    <?php if ($this->options->cdl == '0'): ?>
             <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>Previous</span>&nbsp;  </b>','prev'); ?> 
+<?php endif; ?>
+<?php if ($this->options->cdl == '1'): ?>
+ <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>前のページ</span>&nbsp;  </b>','prev'); ?> 
+<?php endif; ?><?php if ($this->options->cdl == '2'): ?> <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>上一页</span>&nbsp;  </b>','prev'); ?> <?php endif; ?>
 
                 </li>
  
         <li class="pagination-next">        
-  
-<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>Next</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>      
+  <?php if ($this->options->cdl == '0'): ?>
+<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>Next</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>   <?php endif; ?>  <?php if ($this->options->cdl == '1'): ?>
+<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>次のページ </span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>
+<?php endif; ?> <?php if ($this->options->cdl == '2'): ?><?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>下一页</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?> <?php endif; ?>
         </li>
         
-        <li class="pagination-number">page <?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?>  of <?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?></li>
+        <li class="pagination-number">
+<?php if ($this->options->cdl == '0'): ?>page <?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?>第<?php endif; ?><?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?><?php if ($this->options->cdl == '0'): ?>  of <?php endif; ?><?php if ($this->options->cdl == '1'): ?>ページ / <?php endif; ?><?php if ($this->options->cdl == '2'): ?>页/共<?php endif; ?><?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?><?php if ($this->options->cdl == '1'): ?>ページ<?php endif; ?><?php if ($this->options->cdl == '2'): ?>页<?php endif; ?>
+
+
+</li>
     </ul>
 </div>
 
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

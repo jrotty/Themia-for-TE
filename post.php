@@ -292,11 +292,12 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     <div class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <span class="text-color-light text-small"><?php if ($this->options->cdl == '0'): ?>TAGGED IN<?php endif; ?><?php if ($this->options->cdl == '1'): ?>文章ラベル：<?php endif; ?><?php if ($this->options->cdl == '2'): ?>文章标签：<?php endif; ?></span><br/>
 
 
 <nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">
-<?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 无标签'); ?>
+<?php if ($this->options->cdl == '0'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' none'); ?><?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 無'); ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 无标签'); ?><?php endif; ?>
+
 </nav>
 
 
@@ -311,12 +312,13 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
-       <?php thePrev($this); ?> 
+       <?php thePrev($this); ?> <i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>前一篇<?php endif; ?></span></a>
             
           
             </li>
             <li class="post-action">
-                        <?php theNext($this); ?>
+                        <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>后编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>后一篇<?php endif; ?></span>
+                    <i class="fa fa-angle-right"></i></a>
                  </li>
         </ul>
     </nav>
@@ -382,12 +384,13 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action"> 
-              <?php thePrev($this); ?>
+              <?php thePrev($this); ?><i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>前一篇<?php endif; ?></span></a>
                 
             </li>
  <li class="post-action">
                 
-            <?php theNext($this); ?>
+            <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>后一篇<?php endif; ?></span>
+                    <i class="fa fa-angle-right"></i></a>
                 
                
               
