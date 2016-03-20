@@ -2132,14 +2132,7 @@ dl dd {
 abbr,acronym {
 	border-bottom:1px dotted #424242
 }
-blockquote {
-	border-left:2px solid #d1dced;
-	padding:10px 20px
-}
-blockquote cite:before {
-	content:' 鈥 ';
-	padding:0 .3em
-}
+blockquote {margin: 1.5em 3em;padding-left: 1.5em;border-left: 2px solid #D1DCED;}blockquote cite:before{content:' — ';padding:0 .3em}
 #about {
 	display:none;
 	width:100%;
@@ -4361,12 +4354,12 @@ a, a:active, a:hover, a:visited {
 .popup-show.effect-sticky{top:0;margin-top:0 !important}
 #social{margin:12px -20px 12px}
 .social-main{position:relative;margin:0 auto;width:283px}
-.social-main a{float:left;color:#fff !important;line-height:35px;text-align:center;border-radius:2px}
+.social-main a{float:left;color:#fff !important;line-height:20px;text-align:center;border-radius:2px}
 .social-main a:hover{background:#878787;color:#fff;transition:all .2s ease-in 0s}
 .like a{background:#f40;width:140px;display:block;box-shadow:0 1px 1px rgba(0,0,0,.1)}
 .share-s a{background:#ecb842;width:140px;display:block;box-shadow:0 1px 1px rgba(0,0,0,.1)}
 .social-main i{color:#fff;font-style:normal;margin:0 5px 0 0}
-.shang-p a{position:absolute;left:115px;top:-11px;background:#7ab951;width:50px;height:50px;font-size:18px;font-weight:600;line-height:46px;border:4px solid #fff;border-radius:40px}
+.shang-p a{position:absolute;left:115px;top:-11px;background:#7ab951;width:35px;height:35px;font-size:18px;font-weight:600;line-height:36px;border:4px solid #fff;border-radius:40px}
 .shang-main input{height:auto;max-width:100%;vertical-align:middle;display:block}
 .shang-main img{height:auto;max-width:100%;margin:0 auto;vertical-align:middle;display:block}
 .shang-main h4{text-align:center}

@@ -244,7 +244,19 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
         </div>
     </div><?php endif; ?> <?php if (isset($this->fields->t0)): ?> <p><?php $this->fields->t0(); ?></p><?php endif; ?>  <?php if (!empty($this->options->sidebarBlock) && in_array('bjq', $this->options->sidebarBlock)): ?>
 最后由 <?php $this->author() ?> 编辑于<?php echo gmdate('Y年m月d日 H:i', $this->modified + Typecho_Widget::widget('Widget_Options')->timezone); ?><?php endif; ?> 
-<?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
+
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small"><?php if ($this->options->cdl == '0'): ?>TAGGED IN<?php endif; ?><?php if ($this->options->cdl == '1'): ?>文章ラベル：<?php endif; ?><?php if ($this->options->cdl == '2'): ?>文章标签：<?php endif; ?></span><br/>
+
+
+<nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">
+<?php if ($this->options->cdl == '0'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' none'); ?><?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 無'); ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 无标签'); ?><?php endif; ?>
+
+</nav><?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
 
 
   <div id="social">
@@ -287,18 +299,6 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
 </div>
 
 <?php endif; ?> 
-        </div>
-    </div>
-    <div class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small"><?php if ($this->options->cdl == '0'): ?>TAGGED IN<?php endif; ?><?php if ($this->options->cdl == '1'): ?>文章ラベル：<?php endif; ?><?php if ($this->options->cdl == '2'): ?>文章标签：<?php endif; ?></span><br/>
-
-
-<nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">
-<?php if ($this->options->cdl == '0'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' none'); ?><?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 無'); ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 无标签'); ?><?php endif; ?>
-
-</nav>
 
 
 
@@ -322,20 +322,20 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
                  </li>
         </ul>
     </nav>
-    <ul class="post-actions post-action-share">
+  <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
             <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
                 <i class="fa fa-share-alt"></i>
             </a>
         </li>
    <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Twitter" href="https://twitter.com/intent/tweet?text=<?php $this->permalink() ?>">
-                <i class="fa fa-twitter"></i>
+           <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2040415&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
+                <i class="fa fa-qq"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Google+" href="https://plus.google.com/share?url=<?php $this->permalink() ?>">
-                <i class="fa fa-google-plus"></i>
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至人人网" href="http://www.jiathis.com/send/?webid=renren&amp;appkey=&amp;uid=2040415&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
+                <i class="fa fa-renren"></i>
             </a>
         </li>
        
@@ -371,102 +371,6 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
 </article>
 
 
-
-    <div id="bottom-bar" class="post-bottom-bar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
-
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
-
-            
-            
-              
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action"> 
-              <?php thePrev($this); ?><i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>前一篇<?php endif; ?></span></a>
-                
-            </li>
- <li class="post-action">
-                
-            <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>后一篇<?php endif; ?></span>
-                    <i class="fa fa-angle-right"></i></a>
-                
-               
-              
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-    <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Twitter" href="https://twitter.com/intent/tweet?text=<?php $this->permalink() ?>">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Google+" href="https://plus.google.com/share?url=<?php $this->permalink() ?>">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-       
-  
-
-         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=1850331&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
-                <i class="fa fa-weibo"></i>
-            </a>
-        </li>
-
-        
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#blog">
-            
-             <i class="fa fa-arrow-up"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-
- <div id="share-options-bar" class="share-options-bar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
-
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
-
-                
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=<?php $this->permalink() ?>">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=<?php $this->permalink() ?>">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=<?php $this->permalink() ?>">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
                     
 
 	<?php $this->need('footer.php'); ?>

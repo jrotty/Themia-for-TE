@@ -52,16 +52,21 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
 
         
     </section>
-    <section class="boxes">
+    <section class="boxes" id="disqus_thread">
+
         
             <?php $this->widget('Widget_Metas_Category_List')->to($categories); ?>
 <?php while ($categories->next()): ?>
+
+
 <?php $this->widget('Widget_Archive@category-' . $categories->mid, 'pageSize=10000&type=category', 'mid=' . $categories->mid)->to($posts); ?>  <div id="posts-list-Themia" class="archive box" data-category="themia">
 
-             
+            
                     <h4 class="archive-title">
                         <a href="<?php $categories->permalink(); ?>" class="link-unstyled" id="posts-list-<?php $categories->name(); ?>"><?php $categories->name(); ?></a>
                     </h4>
+
+
                     <ul class="archive-posts">
 <?php while ($posts->next()): ?> 
                             <li class="archive-post">
@@ -81,4 +86,4 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
 </div>
 
   
- <?php $this->need('footer.php');?>
+ <?php $this->need('footer2.php');?>

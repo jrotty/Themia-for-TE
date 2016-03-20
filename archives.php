@@ -44,7 +44,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
         <input name="date" type="text" class="form-control input--xlarge" placeholder="Search date (YYYY/MM/DD)" autofocus="autofocus">
     </form>
 <h5 class="archive-result text-color-base text-xlarge" style="display: none;"></h5>
-    <section class="boxes">
+    <section class="boxes" id="disqus_thread">
 
 <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);   
     $year=0; $mon=0; $i=0; $j=0;  
@@ -85,4 +85,4 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
 </div>
                   
 
- <?php $this->need('footer.php');?>
+ <?php $this->need('footer2.php');?>
