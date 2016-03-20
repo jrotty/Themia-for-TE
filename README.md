@@ -12,3 +12,7 @@
 3，修复图片与打赏组件直接接触会导致打赏插件会错乱。
 
 4，blockquote样式优化，感谢KohinataMiku建议。
+
+详细介绍看下面的链接，github我比较迷茫所有有问题也去下面的链接评论
+
+http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual/
