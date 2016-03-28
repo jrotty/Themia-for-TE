@@ -26,13 +26,7 @@
  <meta property="og:image" content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"/>
  <!--STYLES-->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css'); ?>" type="text/css">
-<?php if (!empty($this->options->code) && in_array('kg', $this->options->code)): ?><?php if($this->is('post')): ?>
-<link href="<?php $this->options->themeUrl('js/prism-coy.css'); ?>" rel="stylesheet" />
 
-<?php if (!empty($this->options->code) && !in_array('xbq', $this->options->code)): ?>
-<style>.prism-show-language{display:none}</style><?php endif; ?>
-<?php if (!empty($this->options->code) && in_array('qhh', $this->options->code)): ?>
-<link href="<?php $this->options->themeUrl('js/wrap-fix.css'); ?>" rel="stylesheet" /><?php endif; ?><?php endif; ?><?php endif; ?>
     <!--STYLES END-->
    <?php $this->header("generator=&template="); ?> 
 </head>

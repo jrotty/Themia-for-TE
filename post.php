@@ -276,7 +276,20 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
 <div class="popup effect-fade-scale" id="popup-erwei">
 <div class="popup-content"><center>
 <h3><i class="sidebar-button-icon fa fa-mobile-phone"></i>手机扫描下方二维码</h3>
-<div class="bdsharebuttonbox"><div id="qrcode"></div>
+<div class="bdsharebuttonbox">
+<?php if ($this->options->erwei == '0'): ?>
+<div id="qrcode"></div>
+<?php endif; ?>
+
+<?php if ($this->options->erwei == '1'): ?>
+<img width="200" height="200" src="http://s.jiathis.com/qrcode.php?url=<?php $this->permalink() ?>" title="跨屏浏览二维码" />
+<?php endif; ?>
+
+<?php if ($this->options->erwei == '2'): ?>
+<img width="200" height="200" src="http://b.bshare.cn/barCode?site=weixin&url=<?php $this->permalink() ?>" title="跨屏浏览二维码" />
+<?php endif; ?>
+
+
 </div></center></div>
 </div>
 
@@ -356,7 +369,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#blog">
+                <a class="post-action-btn btn btn--default"  href="#" onclick="gotoTop();return false;">
             
                <i class="fa fa-arrow-up"></i>
             </a>

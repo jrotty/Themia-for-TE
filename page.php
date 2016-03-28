@@ -300,7 +300,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#blog">
+                <a class="post-action-btn btn btn--default" href="#" onclick="gotoTop();return false;">
             
                <i class="fa fa-arrow-up"></i>
             </a>

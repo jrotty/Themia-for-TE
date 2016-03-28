@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "3.1.0");
+define("Themia_Version", "3.2.0");
 function themeConfig($form) {
   echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
@@ -64,6 +64,9 @@ $form->addInput($css->multiMode());
 ,),
     array('Showcolor','bjq'), _t('工具开关'));
     $form->addInput($sidebarBlock->multiMode());
+ $erwei = new Typecho_Widget_Helper_Form_Element_Radio('erwei',array('0' => _t('默认加载js生成'),'1' => _t('jiathis的API生成
+'),'2' => _t('bshare的API生成')),'0',_t('跨屏浏览文章二维码生成方式选择'),_t("默认加载js是最稳定的方式，但其他两个体验上和默认的也没有啥差异,利用api生成的话能让模板少加载个js文件"));
+    $form->addInput($erwei); 
 
   $zfbUrl = new Typecho_Widget_Helper_Form_Element_Text('zfbUrl', NULL, NULL, _t('支付宝付款二维码'), _t('这里添加付款二维码的图片地址，不添加则默认jrotty的支付宝二维码'));
     $form->addInput($zfbUrl);
@@ -71,14 +74,7 @@ $form->addInput($css->multiMode());
   $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择第一项，同时禁用Star插件，以免重复计数【不禁用的话，访问一次，计数器会加2】"));
     $form->addInput($jsq); 
 
-    $code = new Typecho_Widget_Helper_Form_Element_Checkbox('code', 
-    array('kg' => _t('代码高亮【是否开启代码高亮功能，不开启的话，以下三个选项将成为摆设】')
-,'hh' => _t('显示行号【是否在大段代码左侧显示行号】')
-,	'qhh' => _t('强制换行【是否强制换行】'),
-	'xbq' => _t('显示标签语言【是否在大段代码右上角显示语言】')
-,),
-    array('hh','qhh','xbq'), _t('代码高亮设置'),_t("代码高亮默认关闭，如果你想使用其他代码高亮插件或者您的编辑器本身就支持代码高亮，请关闭代码高亮功能，以免造成混乱。"));
-    $form->addInput($code->multiMode());
+ 
 
 
     $bqg = new Typecho_Widget_Helper_Form_Element_Radio('bqg',array('1' => _t('不开启版权狗'),'2' => _t('开启版权声明')),'1',_t('版权声明'),_t("复制文章内容时，会出现版权声明提示，并且复制的内容自带版权声明。"));

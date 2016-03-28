@@ -3,8 +3,8 @@
 
     <span class="copyrights">
  &copy; 2016 <?php $this->author() ?>'s /
- Power by <a  target="_blank"  href="http://typecho.org/">Typecho</a> 
-/ Designed by <a  target="_blank"  href="http://qqdie.com/">Jrotty</a>
+ Power By <a  target="_blank"  href="http://typecho.org/">Typecho</a> 
+/ Designed By <a  target="_blank"  href="http://qqdie.com/">Jrotty</a>
 / Loading time <?php timer_stop($this) ?>s
 / <?php $this->options->tongji(); ?></span>
 </footer>
@@ -133,6 +133,7 @@ function setClipboardText(event) {
 <?php if($this->is('post')): ?>
 
   <script type="text/javascript" src="<?php $this->options->themeUrl('js/Liang.popup.min.js'); ?>"></script>
+<?php if ($this->options->erwei == '0'): ?>
   <script src="<?php $this->options->themeUrl('js/jquery.qrcode.min.js'); ?>"></script>
 <script>
 jQuery('#qrcode').qrcode({
@@ -142,7 +143,7 @@ jQuery('#qrcode').qrcode({
 	text	: "<?php $this->permalink() ?>"
 });
 
-</script><?php endif; ?><?php endif; ?> 
+</script><?php endif; ?><?php endif; ?><?php endif; ?> 
 <?php if (!empty($this->options->sidebarBlock) && in_array('kiana', $this->options->sidebarBlock)): ?>
 
 

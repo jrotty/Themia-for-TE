@@ -3,8 +3,8 @@
 
     <span class="copyrights">
  &copy; 2016 <?php $this->author() ?>'s /
- Power by <a  target="_blank"  href="http://typecho.org/">Typecho</a> 
-/ Designed by <a  target="_blank"  href="http://qqdie.com/">Jrotty</a>
+ Power By <a  target="_blank"  href="http://typecho.org/">Typecho</a> 
+/ Designed By <a  target="_blank"  href="http://qqdie.com/">Jrotty</a>
 / Loading time <?php timer_stop($this) ?>s
 / <?php $this->options->tongji(); ?></span>
 </footer>
@@ -76,7 +76,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#blog">
+                <a class="post-action-btn btn btn--default"  href="#" onclick="gotoTop();return false;">
             
              <i class="fa fa-arrow-up"></i>
             </a>
@@ -234,6 +234,9 @@ function setClipboardText(event) {
 <?php if($this->is('post')): ?>
 
   <script type="text/javascript" src="<?php $this->options->themeUrl('js/Liang.popup.min.js'); ?>"></script>
+<?php if ($this->options->erwei == '0'): ?>
+
+
   <script src="<?php $this->options->themeUrl('js/jquery.qrcode.min.js'); ?>"></script>
 <script>
 jQuery('#qrcode').qrcode({
@@ -243,29 +246,17 @@ jQuery('#qrcode').qrcode({
 	text	: "<?php $this->permalink() ?>"
 });
 
-</script><?php endif; ?><?php endif; ?> 
+</script>
+<?php endif; ?>
+<?php endif; ?><?php endif; ?> 
 <?php if (!empty($this->options->sidebarBlock) && in_array('kiana', $this->options->sidebarBlock)): ?>
 
 
 <script type="text/javascript" src="<?php $this->options->themeUrl('bga.min.js'); ?>"></script><?php endif; ?> 
 
-<?php if (!empty($this->options->code) && in_array('kg', $this->options->code)): ?><?php if($this->is('post')): ?>
-<?php if (!empty($this->options->code) && in_array('hh', $this->options->code)): ?>
-<script>var pres = document.getElementsByTagName('pre');
-                for (var i = 0; i < pres.length; i++)
-                    if (pres[i].getElementsByTagName('code').length > 0)
-                        pres[i].className  = 'line-numbers';
-                </script>
-<?php endif; ?>
-<script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
-
-<?php if (!empty($this->options->code) && in_array('hh', $this->options->code) && in_array('xbq', $this->options->code)): ?>
-<script defer="defer" src="<?php $this->options->themeUrl('js/line-number-wrap-fix.js'); ?>"></script> <?php endif; ?>
-<?php endif; ?><?php endif; ?>
 
 <?php $this->footer(); ?> 
     </body>
 </html>
-
 
 
