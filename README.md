@@ -1,4 +1,6 @@
 # Themia-for-TE
+
+#现在修改中请勿下载
 针对typecho优化的Themia模板
 
 下载后上传到typecho模板目录解压，将解压后的目录重命名为Themia，即可使用
