@@ -4,7 +4,7 @@
  * 
  * @package Themia
  * @author Jrotty
- * @version 3.2.0
+ * @version 3.5.0
  * @link http://qqdie.com
  */
 ?>
@@ -124,7 +124,7 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
     
       	  <span>in </span>
         
-    <a class="category-link"><?php $this->category(','); ?></a>
+    <a class="category-link"><?php $this->category('', true, '木有分类或者该分类已被删除'); ?></a>
 <?php if ($this->options->jsq == '0'): ?><?php else: ?>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
 <?php endif; ?>
@@ -206,17 +206,40 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
 <?php endif; ?> <?php if ($this->options->cdl == '2'): ?><?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>下一页</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?> <?php endif; ?>
         </li>
         
-        <li class="pagination-number">
-<?php if ($this->options->cdl == '0'): ?>page <?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?>第<?php endif; ?><?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?><?php if ($this->options->cdl == '0'): ?>  of <?php endif; ?><?php if ($this->options->cdl == '1'): ?>ページ / <?php endif; ?><?php if ($this->options->cdl == '2'): ?>页/共<?php endif; ?><?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?><?php if ($this->options->cdl == '1'): ?>ページ<?php endif; ?><?php if ($this->options->cdl == '2'): ?>页<?php endif; ?>
+            
+    <form name="formpage" class="pagination-number">
+<?php if ($this->options->cdl == '0'): ?>page <?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?>第<?php endif; ?>
+<input name='SkipPage' onKeyDown='if(event.keyCode==13){submitSkip.click();return false;}' 
+style='width: 15px;' type='text' value='<?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?>' >
+<input name='submitSkip'  id="submitSkip" type='button' onClick='GoPage("<?php $this->options->siteUrl(); ?>page/1")' style="display:none"/>
 
-
-</li>
+<?php if ($this->options->cdl == '0'): ?>  of <?php endif; ?><?php if ($this->options->cdl == '1'): ?>ページ / <?php endif; ?><?php if ($this->options->cdl == '2'): ?>页/共<?php endif; ?><?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?><?php if ($this->options->cdl == '1'): ?>ページ<?php endif; ?><?php if ($this->options->cdl == '2'): ?>页<?php endif; ?>
+</form>
     </ul>
 </div>
-
+ 
 </section>
+  <SCRIPT language=javascript>
+function GoPage(Myself)
+{
+var Lmyself=Myself.replace("1","")
+var g = /^[1-9]*[1-9][0-9]*$/;
 
+if(g.test(document.formpage.SkipPage.value)){
+if (document.formpage.SkipPage.value == 1)
+{window.location.href=Myself;} //绝对路径可自己设置
+if(document.formpage.SkipPage.value><?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?>){alert('您输入的页码不存在，请重新输入！');window.location.href=window.location.href;}
+else{
+window.location.href=Lmyself+document.formpage.SkipPage.value;
+}
 
+}else{
+alert('请输入需要跳转到的页数并且必须为正整数！');
+window.location.href=window.location.href;
+}
+
+}
+</SCRIPT>
 
 
 

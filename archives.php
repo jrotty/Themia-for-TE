@@ -7,10 +7,9 @@
  */
  $this->need('header.php'); 
 
-?> <header id="header" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
+?> <header id="header" 
 
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
+data-behavior="<?php $this->options->css(); ?>">
 
 
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -27,10 +26,9 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
     
 </header>
 
- <nav id="sidebar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
+ <nav id="sidebar" 
 
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
+data-behavior="<?php $this->options->css(); ?>">
 
 <?php $this->need('sidebar.php'); ?>
 <div id="main" data-behavior="<?php $this->options->css(); ?>"

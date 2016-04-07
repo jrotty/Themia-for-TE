@@ -67,13 +67,7 @@ style="background-color:<?php $this->options->bgUrl();?>;"
 <?php }else{ ?>style="background-color: #444444;"<?php };?>></div>
 <?php endif; ?>
 
-<!--- 简繁转换开始 ---><script>
-var defaultEncoding = 2; // 1: 繁體, 2: 简体
-var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
-var cookieDomain = "<?php $this->options->siteUrl(); ?>";
-</script>
-<script type="text/javascript" src="<?php $this->options->themeUrl('js/cn_tw.js'); ?>"></script>
-<!--- 简繁转换结束 --->
+
 
 
 <script>
@@ -129,21 +123,7 @@ function setClipboardText(event) {
 
 
     <!--SCRIPTS-->
-<script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script><?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
-<?php if($this->is('post')): ?>
-
-  <script type="text/javascript" src="<?php $this->options->themeUrl('js/Liang.popup.min.js'); ?>"></script>
-<?php if ($this->options->erwei == '0'): ?>
-  <script src="<?php $this->options->themeUrl('js/jquery.qrcode.min.js'); ?>"></script>
-<script>
-jQuery('#qrcode').qrcode({
-        render	: "canvas",//也可以替换为table
-	width   : 200,
-	height  : 200,
-	text	: "<?php $this->permalink() ?>"
-});
-
-</script><?php endif; ?><?php endif; ?><?php endif; ?> 
+<script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script>
 <?php if (!empty($this->options->sidebarBlock) && in_array('kiana', $this->options->sidebarBlock)): ?>
 
 

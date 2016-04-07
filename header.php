@@ -24,7 +24,7 @@
         <link rel="icon" id="web-icon" href="/favicon.ico">
 <link rel="alternative" type="application/atom+xml" title="RSS" href="<?php $this->options->feedUrl(); ?>">
  <meta property="og:image" content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"/>
- <!--STYLES-->
+ <!--STYLES--> <link rel="stylesheet" href="<?php $this->options->themeUrl('fontawesome.css'); ?>" type="text/css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css'); ?>" type="text/css">
 
     <!--STYLES END-->

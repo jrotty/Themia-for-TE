@@ -48,7 +48,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
     </time>
     
         <span>in </span>
-    <a class="category-link" ><?php $this->category(','); ?></a> <span>lang </span>
+    <a class="category-link" ><?php $this->category('', true, '木有分类或者该分类已被删除'); ?></a> <span>lang </span>
             <a class="category-link"    id="translateLink" href="javascript:translatePage();">繁</a> 
 <?php if ($this->options->jsq == '0'): ?><?php else: ?>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
@@ -92,7 +92,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     
         <span>in </span>
         
-    <a class="category-link" ><?php $this->category(','); ?></a> <span>lang </span>
+    <a class="category-link" ><?php $this->category('', true, '木有分类或者该分类已被删除'); ?></a> <span>lang </span>
             <a class="category-link"    id="translateLink" href="javascript:translatePage();">繁</a> 
          <?php if ($this->options->jsq == '0'): ?><?php else: ?>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
@@ -253,10 +253,10 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
                 <span class="text-color-light text-small"><?php if ($this->options->cdl == '0'): ?>TAGGED IN<?php endif; ?><?php if ($this->options->cdl == '1'): ?>文章ラベル：<?php endif; ?><?php if ($this->options->cdl == '2'): ?>文章标签：<?php endif; ?></span><br/>
 
 
-<nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">
-<?php if ($this->options->cdl == '0'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' none'); ?><?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 無'); ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' 无标签'); ?><?php endif; ?>
+<nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">  <x class="tagsss">
+<?php if ($this->options->cdl == '0'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' <sx>none</sx>'); ?><?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' <sx>無</sx>'); ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?><?php $this->tags('</nav><nav class="tag tag--primary tag--small t-link" style=" display: inline-block;">', true, ' <sx>无标签</sx>'); ?><?php endif; ?></x>
 
-</nav><?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
+</nav>  <?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
 
 
   <div id="social">

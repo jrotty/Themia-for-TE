@@ -168,13 +168,7 @@ style="background-color:<?php $this->options->bgUrl();?>;"
 <?php }else{ ?>style="background-color: #444444;"<?php };?>></div>
 <?php endif; ?>
 
-<!--- 简繁转换开始 ---><script>
-var defaultEncoding = 2; // 1: 繁體, 2: 简体
-var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
-var cookieDomain = "<?php $this->options->siteUrl(); ?>";
-</script>
-<script type="text/javascript" src="<?php $this->options->themeUrl('js/cn_tw.js'); ?>"></script>
-<!--- 简繁转换结束 --->
+
 
 
 <script>
@@ -193,6 +187,14 @@ $("#web-icon").attr('href',"<?php $this->options->siteUrl(); ?>favicon.ico");
 }
 };
 </script>
+<?php if($this->is('page')||$this->is('post')): ?>
+<!--- 简繁转换开始 ---><script>
+var defaultEncoding = 2; // 1: 繁體, 2: 简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "<?php $this->options->siteUrl(); ?>";
+</script>
+<script type="text/javascript" src="<?php $this->options->themeUrl('js/cn_tw.js'); ?>"></script>
+<!--- 简繁转换结束 --->
 <?php if ($this->options->bqg == '2'): ?>
 <script>
 document.body.addEventListener('copy', function (e) {
@@ -226,12 +228,14 @@ function setClipboardText(event) {
     }
 }
 
-</script><?php endif; ?>
+</script><?php endif; ?><?php endif; ?>
 
 
     <!--SCRIPTS-->
-<script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script><?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
+<script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script>
 <?php if($this->is('post')): ?>
+<?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
+
 
   <script type="text/javascript" src="<?php $this->options->themeUrl('js/Liang.popup.min.js'); ?>"></script>
 <?php if ($this->options->erwei == '0'): ?>
@@ -248,7 +252,16 @@ jQuery('#qrcode').qrcode({
 
 </script>
 <?php endif; ?>
-<?php endif; ?><?php endif; ?> 
+
+<?php endif; ?>
+
+
+ <script type="text/javascript">
+        $(document).ready(function(){ 
+            $('.tagsss sx').replaceWith('<?php $this->category(','); ?>'); 
+        });  
+    </script> 
+<?php endif; ?> 
 <?php if (!empty($this->options->sidebarBlock) && in_array('kiana', $this->options->sidebarBlock)): ?>
 
 
@@ -258,5 +271,4 @@ jQuery('#qrcode').qrcode({
 <?php $this->footer(); ?> 
     </body>
 </html>
-
 
