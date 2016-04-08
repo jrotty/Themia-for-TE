@@ -290,48 +290,7 @@ html {
 	text-size-adjust:100%;
 	tap-highlight-color:transparent
 }
-body {
-
-overflow-x:hidden;
-  
-	width: 100%;
-    padding: 0;
-    font-size: 1.5rem;
-    line-height: 1.85em;
-    letter-spacing: .01em;
-    -webkit-font-smoothing: subpixel-antialiased;
-    font-smoothing: subpixel-antialiased;
-
-
-}::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar-track-piece {
-  background-color: #ffffff;
-}
-
-::-webkit-scrollbar-track-piece:no-button {}
-
-::-webkit-scrollbar-thumb {
-  background-color: #9DDAFF;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #9DDAFF;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background-color: #CACED0;
-}
-
-
+body{padding:0;font-size:1.5rem;line-height:1.85em;letter-spacing:.01em;-webkit-font-smoothing:subpixel-antialiased;font-smoothing:subpixel-antialiased}
 
 body.pushed {
 	overflow-x:hidden
