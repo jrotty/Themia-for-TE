@@ -28,12 +28,12 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action"> 
-              <?php thePrev($this); ?><i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>前一篇<?php endif; ?></span></a>
+              <?php thePrev($this); ?><i class="fa fa-angle-left"></i><span class="hide-xs hide-sm text-small icon-ml"><?php if ($this->options->cdl == '0'): ?>PREVIOUS  <?php endif; ?><?php if ($this->options->cdl == '1'): ?>前一篇<?php endif; ?></span></a>
                 
             </li>
  <li class="post-action">
                 
-            <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>前编<?php endif; ?><?php if ($this->options->cdl == '2'): ?>后一篇<?php endif; ?></span>
+            <?php theNext($this); ?><span class="hide-xs hide-sm text-small icon-mr"><?php if ($this->options->cdl == '0'): ?>NEXT<?php endif; ?><?php if ($this->options->cdl == '1'): ?>后一篇<?php endif; ?></span>
                     <i class="fa fa-angle-right"></i></a>
                 
                
@@ -41,20 +41,20 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
             </li>
         </ul>
     </nav>
-    <ul class="post-actions post-action-share">
+   <ul class="post-actions post-action-share">
          <li class="post-action hide-lg hide-md hide-sm">
             <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
                 <i class="fa fa-share-alt"></i>
             </a>
         </li>
     <li class="post-action hide-xs">
-<a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2040415&amp;url=<?php $this->permalink() ?>/&amp;title=<?php $this->title() ?>">
+<a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php $this->permalink() ?>&title=<?php $this->title() ?>&site=<?php $this->options->title(); ?>/&pics=<?php showThumbnail($this); ?>">
                 <i class="fa fa-qq"></i>
             </a>
             
         </li>
         <li class="post-action hide-xs">
-           <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至人人网" href="http://www.jiathis.com/send/?webid=renren&amp;appkey=&amp;uid=2040415&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
+           <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至人人网" href="http://widget.renren.com/dialog/share?resourceUrl=<?php $this->permalink() ?>/&srcUrl=<?php $this->permalink() ?>/&pic=<?php showThumbnail($this); ?>&title=<?php $this->title() ?>">
                 <i class="fa fa-renren"></i>
             </a>
         </li>
@@ -62,7 +62,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
   
 
          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=1850331&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
+            <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至新浪微博" href="http://service.weibo.com/share/share.php?url=<?php $this->permalink() ?>/&appkey=<?php $this->options->title(); ?>/&title=<?php $this->title() ?>&pic=<?php showThumbnail($this); ?>">
                 <i class="fa fa-weibo"></i>
             </a>
         </li>
@@ -95,17 +95,17 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
                 
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=1850331&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
+            <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?url=<?php $this->permalink() ?>/&appkey=<?php $this->options->title(); ?>/&title=<?php $this->title() ?>&pic=<?php showThumbnail($this); ?>">
                  <i class="fa fa-weibo"></i><span class="">Share on 新浪微博</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="http://www.jiathis.com/send/?webid=renren&amp;appkey=&amp;uid=2040415&amp;url=<?php $this->permalink() ?>&amp;title=<?php $this->title() ?>">
+            <a class="share-option-btn" target="new" href="http://widget.renren.com/dialog/share?resourceUrl=<?php $this->permalink() ?>/&srcUrl=<?php $this->permalink() ?>/&pic=<?php showThumbnail($this); ?>&title=<?php $this->title() ?>">
                 <i class="fa fa-renren"></i><span>Share on 人人网</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2040415&amp;url=<?php $this->permalink() ?>/&amp;title=<?php $this->title() ?>">
+            <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php $this->permalink() ?>&title=<?php $this->title() ?>&site=<?php $this->options->title(); ?>/&pics=<?php showThumbnail($this); ?>">
                 <i class="fa fa-qq"></i><span>Share on QQ空间</span>
             </a>
         </li>
@@ -238,7 +238,7 @@ function setClipboardText(event) {
 
 
   <script type="text/javascript" src="<?php $this->options->themeUrl('js/Liang.popup.min.js'); ?>"></script>
-<?php if ($this->options->erwei == '0'): ?>
+
 
 
   <script src="<?php $this->options->themeUrl('js/jquery.qrcode.min.js'); ?>"></script>
@@ -251,14 +251,14 @@ jQuery('#qrcode').qrcode({
 });
 
 </script>
-<?php endif; ?>
+
 
 <?php endif; ?>
 
 
  <script type="text/javascript">
         $(document).ready(function(){ 
-            $('.tagsss sx').replaceWith('<?php $this->category(','); ?>'); 
+            $('.tag sx').replaceWith('<?php $this->category('<div id="div" style="display: none" onMouseout="hidden();">', true, '木有标签且木有分类或者该分类已被删除'); ?></div>'); 
         });  
     </script> 
 <?php endif; ?> 
@@ -271,4 +271,3 @@ jQuery('#qrcode').qrcode({
 <?php $this->footer(); ?> 
     </body>
 </html>
-

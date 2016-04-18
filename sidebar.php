@@ -12,7 +12,7 @@
                     <a  class="sidebar-button-link " href="<?php $this->options->siteUrl(); ?>" >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home" ></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Home<?php endif; ?><?php if ($this->options->cdl == '1'): ?>トップページ<?php endif; ?><?php if ($this->options->cdl == '2'): ?>主页<?php endif; ?></span>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Home<?php endif; ?><?php if ($this->options->cdl == '1'): ?>主页<?php endif; ?></span>
                 </a>
         </li>
         
@@ -24,7 +24,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Categories<?php endif; ?><?php if ($this->options->cdl == '1'): ?>分類<?php endif; ?><?php if ($this->options->cdl == '2'): ?>分类归档<?php endif; ?>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Categories<?php endif; ?><?php if ($this->options->cdl == '1'): ?>分类归档<?php endif; ?>
 </span>
                 </a>
         </li>
@@ -37,7 +37,7 @@
                     >
                 
                    <i class="sidebar-button-icon fa fa-lg fa-calendar"></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Archive<?php endif; ?><?php if ($this->options->cdl == '1'): ?>ファイリング<?php endif; ?><?php if ($this->options->cdl == '2'): ?>时间归档<?php endif; ?></span>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Archive<?php endif; ?><?php if ($this->options->cdl == '1'): ?>时间归档<?php endif; ?></span>
                 </a>
         </li>
         
@@ -49,7 +49,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Search<?php endif; ?><?php if ($this->options->cdl == '1'): ?>検索<?php endif; ?><?php if ($this->options->cdl == '2'): ?>搜索<?php endif; ?>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Search<?php endif; ?><?php if ($this->options->cdl == '1'): ?>搜索<?php endif; ?>
 </span>
                 </a>
         </li>
@@ -62,7 +62,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-info-circle"></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>About<?php endif; ?><?php if ($this->options->cdl == '1'): ?>わたし<?php endif; ?><?php if ($this->options->cdl == '2'): ?>关于<?php endif; ?></span>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>About<?php endif; ?><?php if ($this->options->cdl == '1'): ?>关于<?php endif; ?></span>
                 </a>
         </li>
         
@@ -76,7 +76,7 @@
                     <a  class="sidebar-button-link " href="<?php $this->options->weibo();?>" target="_blank" >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Weibo<?php endif; ?><?php if ($this->options->cdl == '1'): ?>ミニブログ<?php endif; ?><?php if ($this->options->cdl == '2'): ?>微博<?php endif; ?></span>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Weibo<?php endif; ?><?php if ($this->options->cdl == '1'): ?>微博<?php endif; ?></span>
                 </a>
         </li>
 
@@ -85,7 +85,7 @@
                     <a class="sidebar-button-link " href="<?php $this->options->links();?>">
                 
                       <i class="sidebar-button-icon fa fa-lg fa-chain"></i>
-                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Links<?php endif; ?><?php if ($this->options->cdl == '1'): ?>友达<?php endif; ?><?php if ($this->options->cdl == '2'): ?>友链<?php endif; ?></span>
+                    <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Links<?php endif; ?><?php if ($this->options->cdl == '1'): ?>友链<?php endif; ?></span>
                 </a>
         </li>
     </ul>

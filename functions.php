@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "3.5.1");
+define("Themia_Version", "3.6.0");
 function themeConfig($form) {
   echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
@@ -37,8 +37,7 @@ $links = new Typecho_Widget_Helper_Form_Element_Text('links', NULL,NULL, _t('lin
     $form->addInput($links);
 $about = new Typecho_Widget_Helper_Form_Element_Text('about', NULL,NULL, _t('about链接地址'), _t('新建独立页面，写上关于自己的属性，然后把页面地址填入这里'));
     $form->addInput($about);
- $cdl = new Typecho_Widget_Helper_Form_Element_Radio('cdl',array('0' => _t('English'),'1' => _t('日本語【渣翻译】
-'),'2' => _t('中文')),'0',_t('界面语言设置'),_t("尽管英文逼格比较高，但是中文有中文的好处。此处默认是英文，因为我比较屌，所以有日文选项"));
+ $cdl = new Typecho_Widget_Helper_Form_Element_Radio('cdl',array('0' => _t('English'),'1' => _t('中文')),'0',_t('界面语言设置'),_t("尽管英文逼格比较高，但是中文有中文的好处。此处默认是英文。"));
     $form->addInput($cdl); 
 
 $css = new Typecho_Widget_Helper_Form_Element_Radio('css',
@@ -64,14 +63,12 @@ $form->addInput($css->multiMode());
 ,),
     array('Showcolor','bjq'), _t('工具开关'));
     $form->addInput($sidebarBlock->multiMode());
- $erwei = new Typecho_Widget_Helper_Form_Element_Radio('erwei',array('0' => _t('默认加载js生成'),'1' => _t('jiathis的API生成
-'),'2' => _t('bshare的API生成')),'0',_t('跨屏浏览文章二维码生成方式选择'),_t("默认加载js是最稳定的方式，但其他两个体验上和默认的也没有啥差异,利用api生成的话能让模板少加载个js文件"));
-    $form->addInput($erwei); 
+
 
   $zfbUrl = new Typecho_Widget_Helper_Form_Element_Text('zfbUrl', NULL, NULL, _t('支付宝付款二维码'), _t('这里添加付款二维码的图片地址，不添加则默认jrotty的支付宝二维码'));
     $form->addInput($zfbUrl);
 
-  $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择第一项，同时禁用Star插件，以免重复计数【不禁用的话，访问一次，计数器会加2】"));
+  $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（最后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择非插件项，同时禁用Star插件，以免重复计数【不禁用的话，计数器计数会翻倍】"));
     $form->addInput($jsq); 
 
  
@@ -112,9 +109,12 @@ function themeInit($archive)
 
 function image_class_replace($content)
 {
+
     $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>#',
-        '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3">
+        '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" >
 </a></div>', $content);
+$content = preg_replace('#{(.*?)\|(.*?)}#',
+        '<ruby>$1<rp> (</rp><rt>$2</rt><rp>) </rp></ruby>', $content);
     return $content;
 }
 function get_post_view($archive)
@@ -163,12 +163,12 @@ function showThumbnail($widget)
     $attach = $widget->attachments(1)->attachment;
     $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i'; 
     
-
+ if ($attach->isImage) {
+      echo $attach->url; 
+    } else
 if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
          echo $thumbUrl[1][0];
-    } else     if ($attach->isImage) {
-      echo $attach->url; 
-    } else {
+    } else     {
         echo $random;
     }
 }

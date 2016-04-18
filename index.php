@@ -1,10 +1,10 @@
 <?php
 /**
- *Te响应式主题 : Themia，一款个性化十分丰富，附加功能非常全面，自定义字段非常屌的华丽的响应式模板。
+ *<div style="color:rgb(9, 190, 245); font-weight:bold;">Te响应式主题 : Themia，一款个性化十分丰富，附加功能非常全面，自定义字段非常屌的华丽的响应式模板。<br>无需插件的文章置顶功能。<br>无需插件的图片灯箱效果。<br>无需插件的文章的浏览计数。<br>无需插件实现的缩略图功能。<br>集成的文章二维码功能，大赏功能，还有萌物kiana。</div>
  * 
- * @package Themia
- * @author Jrotty
- * @version 3.5.1
+ * @package <div id="blink">Themia</div><script language="javascript"> var i = 1;function changeColor(){ var color="#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray";color=color.split("|");document.getElementById("blink").style.color=color[parseInt(Math.random() * color.length)]; }setInterval("changeColor()",100); </script>
+ * @author <font color=#FF0000>Jrotty</font>
+ * @version <font color=#FF0000>3.6.0</font>
  * @link http://qqdie.com
  */
 ?>
@@ -124,7 +124,7 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
     
       	  <span>in </span>
         
-    <a class="category-link"><?php $this->category('', true, '木有分类或者该分类已被删除'); ?></a>
+    <a class="category-link"><?php $this->category(',', true, '木有分类或者该分类已被删除'); ?></a>
 <?php if ($this->options->jsq == '0'): ?><?php else: ?>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
 <?php endif; ?>
@@ -192,27 +192,22 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
         <li class="pagination-prev">
     <?php if ($this->options->cdl == '0'): ?>
             <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>Previous</span>&nbsp;  </b>','prev'); ?> 
-<?php endif; ?>
-<?php if ($this->options->cdl == '1'): ?>
- <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>前のページ</span>&nbsp;  </b>','prev'); ?> 
-<?php endif; ?><?php if ($this->options->cdl == '2'): ?> <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>上一页</span>&nbsp;  </b>','prev'); ?> <?php endif; ?>
+<?php endif; ?><?php if ($this->options->cdl == '1'): ?> <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>上一页</span>&nbsp;  </b>','prev'); ?> <?php endif; ?>
 
                 </li>
  
         <li class="pagination-next">        
   <?php if ($this->options->cdl == '0'): ?>
-<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>Next</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>   <?php endif; ?>  <?php if ($this->options->cdl == '1'): ?>
-<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>次のページ </span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>
-<?php endif; ?> <?php if ($this->options->cdl == '2'): ?><?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>下一页</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?> <?php endif; ?>
+<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>Next</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>   <?php endif; ?> <?php if ($this->options->cdl == '1'): ?><?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>下一页</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?> <?php endif; ?>
         </li>
         
             
  <li class="pagination-number">
 
-<?php if ($this->options->cdl == '0'): ?>page <?php endif; ?><?php if ($this->options->cdl == '1'): ?><?php endif; ?><?php if ($this->options->cdl == '2'): ?>第<?php endif; ?><?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?>
+<?php if ($this->options->cdl == '0'): ?>page <?php endif; ?><?php if ($this->options->cdl == '1'): ?>第<?php endif; ?><?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?>
 
 
-<?php if ($this->options->cdl == '0'): ?>  of <?php endif; ?><?php if ($this->options->cdl == '1'): ?>ページ / <?php endif; ?><?php if ($this->options->cdl == '2'): ?>页/共<?php endif; ?><?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?><?php if ($this->options->cdl == '1'): ?>ページ<?php endif; ?><?php if ($this->options->cdl == '2'): ?>页<?php endif; ?>
+<?php if ($this->options->cdl == '0'): ?>  of <?php endif; ?><?php if ($this->options->cdl == '1'): ?>页/共<?php endif; ?><?php echo   ceil($this->getTotal() / $this->parameter->pageSize); ?><?php if ($this->options->cdl == '1'): ?>页<?php endif; ?>
 </li>
     </ul>
 </div>
