@@ -235,7 +235,7 @@ function setClipboardText(event) {
     }
 }
 
-</script><?php endif;?><?php endif; ?>
+</script><?php endif;?><?php endif; ?><?php endif; ?>
 
 
     <!--SCRIPTS-->
