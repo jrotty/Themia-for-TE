@@ -87,11 +87,18 @@ $("#web-icon").attr('href',"<?php $this->options->siteUrl(); ?>favicon.ico");
 };
 </script>
 <?php if ($this->options->bqg == '2'): ?>
+<?php if($this->user->hasLogin()):?>
+
+<?php else:?>
 <script>
 document.body.addEventListener('copy', function (e) {
     if (window.getSelection().toString() && window.getSelection().toString().length > 42) {
         setClipboardText(e);
-        alert('商业转载请联系作者获得授权，非商业转载请注明出处，谢谢合作。');
+     notie({
+  type: 'info',
+  text: '商业转载请联系作者获得授权，非商业转载请注明出处，谢谢合作。',
+  autoHide: true
+})
     }
 }); 
 function setClipboardText(event) {
@@ -119,7 +126,7 @@ function setClipboardText(event) {
     }
 }
 
-</script><?php endif; ?>
+</script><?php endif;?><?php endif; ?>
 
 
     <!--SCRIPTS-->
