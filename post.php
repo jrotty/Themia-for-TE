@@ -242,9 +242,11 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
                 </div>     <?php endif; ?>   
             
         </div>
-    </div><?php endif; ?> <?php if (isset($this->fields->t0)): ?> <p><?php $this->fields->t0(); ?></p><?php endif; ?>  <?php if (!empty($this->options->sidebarBlock) && in_array('bjq', $this->options->sidebarBlock)): ?>
-最后由 <?php $this->author() ?> 编辑于<?php echo gmdate('Y年m月d日 H:i', $this->modified + Typecho_Widget::widget('Widget_Options')->timezone); ?><?php endif; ?> 
-
+    </div><?php endif; ?> <?php if (isset($this->fields->t0)): ?> <p><?php $this->fields->t0(); ?></p><?php endif; ?> 
+    
+ <div style="float:right">
+<?php if (!empty($this->options->sidebarBlock) && in_array('bjq', $this->options->sidebarBlock)): ?>
+最后由 <?php $this->author() ?> 编辑于<?php echo gmdate('Y年m月d日 H:i', $this->modified + Typecho_Widget::widget('Widget_Options')->timezone); ?><?php endif; ?> </div> 
         </div>
     </div>
     <div class="post-footer main-content-wrap">
