@@ -1,10 +1,10 @@
 <?php
 /**
- *<div style="color:rgb(9, 190, 245); font-weight:bold;">Te响应式主题 : Themia，一款个性化十分丰富，附加功能非常全面，自定义字段非常屌的华丽的响应式模板。<br>无需插件的文章置顶功能。<br>无需插件的图片灯箱效果。<br>无需插件的文章的浏览计数。<br>无需插件实现的缩略图功能。<br>集成的文章二维码功能，大赏功能，还有萌物kiana。</div>
+ *Te响应式主题 : Themia，一款个性化十分丰富，附加功能非常全面，自定义字段非常屌的华丽的响应式模板。
  * 
- * @package <div id="blink">Themia</div><script language="javascript"> var i = 1;function changeColor(){ var color="#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray";color=color.split("|");document.getElementById("blink").style.color=color[parseInt(Math.random() * color.length)]; }setInterval("changeColor()",100); </script>
- * @author <font color=#FF0000>Jrotty</font>
- * @version <font color=#FF0000>3.6.1</font>
+ * @package Themia
+ * @author Jrotty
+ * @version 3.6.1
  * @link http://qqdie.com
  */
 ?>
