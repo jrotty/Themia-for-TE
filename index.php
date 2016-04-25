@@ -4,7 +4,7 @@
  * 
  * @package <div id="blink">Themia</div><script language="javascript"> var i = 1;function changeColor(){ var color="#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray";color=color.split("|");document.getElementById("blink").style.color=color[parseInt(Math.random() * color.length)]; }setInterval("changeColor()",100); </script>
  * @author <font color=#FF0000>Jrotty</font>
- * @version <font color=#FF0000>3.6.0</font>
+ * @version <font color=#FF0000>3.6.1</font>
  * @link http://qqdie.com
  */
 ?>
