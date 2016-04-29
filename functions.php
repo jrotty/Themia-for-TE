@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "3.6.1");
+define("Themia_Version", "3.6.2beat");
 function themeConfig($form) {
   echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
@@ -111,7 +111,7 @@ function image_class_replace($content)
 {
 
     $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>#',
-        '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" >
+        '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" $5>
 </a></div><br>', $content);
 $content = preg_replace('#{(.*?)\|(.*?)}#',
         '<ruby>$1<rp> (</rp><rt>$2</rt><rp>) </rp></ruby>', $content);
