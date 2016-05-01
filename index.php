@@ -138,7 +138,7 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
                 <div class="postShorten-excerpt" itemprop="articleBody">        <?php if (!empty($this->options->sidebarBlock) && in_array('simg', $this->options->sidebarBlock)): ?>
 <?php else: ?>
                  <?php if (isset($this->fields->st)): ?>   <p><img src="<?php showThumbnail($this); ?>" alt=""></p> <?php endif; ?> <?php endif; ?> 
-                        <p>
+                        <p style=" margin: 0 0 0em;">
 <?php if (isset($this->fields->d)): ?><?php $this->fields->d(); ?>...
 <?php else: ?>
      <?php $this->excerpt(140, '...'); ?> 
