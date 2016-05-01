@@ -109,7 +109,8 @@ function themeInit($archive)
 
 function image_class_replace($content)
 {
-
+ $content = preg_replace('#<a(.*?) href="([^"]*/)?(([^"/]*)\.[^"]*)"(.*?)>#',
+        '<a$1 href="$2$3"$5 target="_blank">', $content);
     $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>#',
         '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" $5>
 </a></div><br>', $content);
