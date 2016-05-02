@@ -4,7 +4,7 @@
  * 
  * @package Themia
  * @author Jrotty
- * @version 3.6.1
+ * @version 3.6.2
  * @link http://qqdie.com
  */
 ?>
@@ -213,17 +213,6 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
 </div>
  
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
