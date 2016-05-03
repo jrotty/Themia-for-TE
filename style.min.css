@@ -2145,3 +2145,10 @@ a, a:active, a:hover, a:visited {
 .shang-main img{height:auto;max-width:100%;margin:0 auto;vertical-align:middle;display:block}
 .shang-main h4{text-align:center}
 .zanzhu{margin-top:-5px!important;padding-bottom:5px;border-bottom:1px solid #eee;color:#666;font-weight:bold;font-size:18px;}
+
+.browsehappy {
+    padding: 8px 0;
+    background: #FBE3E4;
+    color: #8A1F11;
+    text-align: center;
+}
