@@ -4,6 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
     <title><?php $this->archiveTitle(array(
 'category'=>_t('分类 %s 下的文章'),
 'search'=>_t('包含关键字 %s 的文章'),
