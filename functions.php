@@ -24,6 +24,18 @@ function themeConfig($form) {
     $sticky_3 = new Typecho_Widget_Helper_Form_Element_Text('sticky_3',NULL, NULL,'置顶文章ID', '填写对应主题的 id 即可使某些分类的文章在置顶首页显示（例如 1）。');
     $sticky_3->input->setAttribute('class', 'mini');
 $form->addInput($sticky_3->addRule('isInteger', '请填入数字'));
+ //文章首行缩进
+    $page_suo = new Typecho_Widget_Helper_Form_Element_Radio('page_suo', 
+    array(
+        'display' => _t('启用全局缩进'),  
+        'display1' => _t('仅post页面启用'),  
+        'display2' => _t('仅page页面启用'),  
+        'display3' => _t('仅index页面启用'),  
+        'close' => _t('禁用')
+        ), 
+    'close', 
+    _t('文章首行缩进'), _t('开启后，所有文章内容将自动缩进2em（两个中文汉字宽度）'));
+    $form->addInput($page_suo);
     $weibo = new Typecho_Widget_Helper_Form_Element_Text('weibo', NULL,'http://weibo.com/jinzeboke', _t('新浪微博地址'), _t('填写你的新浪微博主页地址到菜单目录中'));
     $form->addInput($weibo);
 
