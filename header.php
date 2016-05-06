@@ -28,7 +28,18 @@
  <meta property="og:image" content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"/>
  <!--STYLES--> <link rel="stylesheet" href="<?php $this->options->themeUrl('fontawesome.css'); ?>" type="text/css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css'); ?>" type="text/css">
-
+<?php if($this->options->page_suo == 'display'):?>
+<style> p{text-indent: 2em;}p iframe{margin-left:-2em;} </style>
+<?php endif; ?>
+<?php if($this->options->page_suo == 'display1'):?><?php if($this->is('post')): ?>
+<style> p{text-indent: 2em;}p iframe{margin-left:-2em;} </style>
+<?php endif; ?><?php endif; ?>
+<?php if($this->options->page_suo == 'display2'):?><?php if($this->is('page')): ?>
+<style> p{text-indent: 2em;}p iframe{margin-left:-2em;} </style>
+<?php endif; ?><?php endif; ?>
+<?php if($this->options->page_suo == 'display3'):?><?php if($this->is('index')): ?>
+<style> p{text-indent: 2em;}p iframe{margin-left:-2em;} </style>
+<?php endif; ?><?php endif; ?>
     <!--STYLES END-->
    <?php $this->header("generator=&template="); ?> 
 </head>
