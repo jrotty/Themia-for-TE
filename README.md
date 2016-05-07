@@ -18,7 +18,7 @@
 
 模板样式的自定义功能，超强的自定义字段功能，利用QQ空间，新浪等api的分享功能
 
-详细介绍看下面的链接，github我比较迷茫所有有问题也去下面的链接评论
+详细介绍看下面的链接，github我比较迷茫所以有问题也去下面的链接评论
 
 http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual/
 
