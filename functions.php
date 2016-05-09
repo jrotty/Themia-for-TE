@@ -125,7 +125,7 @@ function image_class_replace($content)
         '<a$1 href="$2$3"$5 target="_blank">', $content);
     $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>#',
         '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" $5>
-</a></div>', $content);
+</a></div><br>', $content);
 $content = preg_replace('#{(.*?)\|(.*?)}#',
         '<ruby>$1<rp> (</rp><rt>$2</rt><rp>) </rp></ruby>', $content);
     return $content;
