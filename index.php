@@ -4,7 +4,7 @@
  * 
  * @package Themia
  * @author Jrotty
- * @version 3.6.2
+ * @version 3.6.3
  * @link http://qqdie.com
  */
 ?>
@@ -129,8 +129,8 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
 <?php endif; ?>
 
-<?php if($this->user->hasLogin()):?>
-  <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" class="category-link"  target="_blank">编辑</a>
+  <?php if($this->user->hasLogin()):?>
+  <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" class="category-link"  target="_blank"><?php if ($this->options->cdl == '0'): ?>Edit<?php endif; ?><?php if ($this->options->cdl == '1'): ?>编辑<?php endif; ?></a>
 <?php endif;?>
     
 </div>
@@ -149,7 +149,7 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
                         
                             <a  <?php if ($this->fields->l){ ?>href="<?php $this->fields->l(); ?>"  target="_blank"<?php }else{ ?>
 
-href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link link ">Continue reading</a>
+href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link link "><?php if ($this->options->cdl == '0'): ?>Continue reading<?php endif; ?><?php if ($this->options->cdl == '1'): ?>继续阅读<?php endif; ?></a>
                             
                         
 
