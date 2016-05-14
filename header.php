@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
     
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
