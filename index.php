@@ -33,7 +33,7 @@
                         ">            
             
 <section class="postShorten-group main-content-wrap">
- 
+ <?php if ($this->have()): ?>
 <?php /*
 	if(is_home() && get_option('sticky_posts')){
     $sticky = get_option('sticky_posts'); 
@@ -215,7 +215,8 @@ a, a:active, a:hover, a:visited {
 </li>
     </ul>
 </div>
- 
+ <?php else: ?>
+<article class="postShorten" itemtype="http://schema.org/BlogPosting" id="article"> <div class="postShorten-wrap"> <div class="postShorten-header"> <h1 class="postShorten-title" itemprop="headline"> <a class="link-unstyled" >搜索内容不存在</a> </h1> </div> </div> </article> <?php endif; ?>
 </section>
 
 
