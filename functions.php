@@ -164,7 +164,6 @@ if ( $display )
 echo $r;
 return $r;
 }
-
 /** 输出文章缩略图 */
 function showThumbnail($widget)
 { 
@@ -175,16 +174,40 @@ function showThumbnail($widget)
 
     $attach = $widget->attachments(1)->attachment;
     $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i'; 
-    
+  $patternMD = '/\!\[.*?\]\((http(s)?:\/\/.*?(jpg|png))/i';
+    $patternMDfoot = '/\[.*?\]:\s*(http(s)?:\/\/.*?(jpg|png))/i';
+
  if ($attach->isImage) {
       echo $attach->url; 
     } else
 if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
          echo $thumbUrl[1][0];
-    } else     {
-        echo $random;
     }
+//如果是内联式markdown格式的图片
+    else if (preg_match_all($patternMD, $widget->content, $thumbUrl)) {
+      echo $thumbUrl[1][0];
+    }
+    //如果是脚注式markdown格式的图片
+    else if (preg_match_all($patternMDfoot, $widget->content, $thumbUrl)) {
+      echo $thumbUrl[1][0];
+    }
+ else{
+echo $random;
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 function theNext($widget, $default = NULL)
 {
