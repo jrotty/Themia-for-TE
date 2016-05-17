@@ -40,8 +40,10 @@ data-behavior="<?php $this->options->css(); ?>">
 <div id="archives" class="main-content-wrap">
 <form id="filter-form" action="#">
         <input name="date" type="text" class="form-control input--xlarge" placeholder="Search date (YYYY/MM/DD)" autofocus="autofocus">
-    </form>
-<h5 class="archive-result text-color-base text-xlarge" style="display: none;"></h5>
+    </form> <h5 class="archive-result text-color-base text-xlarge"
+        data-message-zero="没有该时间段的文章"
+        data-message-one="检索到 1 篇文章"
+        data-message-other="检索到 {n} 篇文章"></h5>
     <section class="boxes" id="disqus_thread">
 
 <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);   
