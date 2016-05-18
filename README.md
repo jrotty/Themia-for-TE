@@ -2,7 +2,7 @@
 
 针对typecho优化的Themia模板
 
-下载后上传到typecho模板目录解压，将解压后的目录重命名为Themia，即可使用
+下载后上传到typecho模板目录解压，将解压后的文件夹重命名为Themia，即可使用
 
 模板特色：
 
