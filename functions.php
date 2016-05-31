@@ -123,9 +123,62 @@ function image_class_replace($content)
 {
  $content = preg_replace('#<a(.*?) href="([^"]*/)?(([^"/]*)\.[^"]*)"(.*?)>#',
         '<a$1 href="$2$3"$5 target="_blank">', $content);
-    $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>#',
-        '<div class="figure fig-100"><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" $5>
-</a></div><br>', $content);
+
+
+
+  $content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>\+#',
+        '<div class="figure nocaption fig-100"><p><a class="fancybox" href="$2$3" title="" target="_blank" rel="external"><img$1 class="fig-img" src="$2$3" $5>
+</a></p></div>', $content);
+
+
+
+$content = preg_replace('#\[t(:|：)(.*?)\]<br\s*/?>#',
+        '<div class="image-gallery">
+        <div class="image-gallery-metabar">
+            <span>$2</span>
+        </div>', $content);
+
+$content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>上(<br\s*/?>)?#',
+'<div class="image-gallery-photos image-gallery-photos--thumbnail"> <div class="photo-box">
+                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="gallery-undefined" title="" href="$2$3" target="_blank" style="top: -168.5px;">
+                        <img $1 class="photo" src="$2$3" itemprop="image" $5>
+                    </a>
+                </div>', $content);
+
+
+
+
+
+$content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>左(<br\s*/?>)?#',
+'<div class="photo-box">
+                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="gallery-undefined" title="" href="$2$3" target="_blank" style="top: -31px;">
+                        <img class="photo" src="$2$3" itemprop="image"$5>
+                    </a>
+                </div>', $content);
+
+
+$content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>右(<br\s*/?>)?#',
+'<div class="photo-box">
+                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="gallery-undefined" title="" href="$2$3" target="_blank" style="left: -18.9582px; top: -2.5px;">
+                        <img class="photo" src="$2$3" itemprop="image"$5 style="height: 328px; width: 584.916px;">
+                    </a>
+                </div>', $content);
+$content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>\.<br\s*/?>#',
+'<div class="photo-box">
+                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="gallery-undefined" title="" href="$2$3" target="_blank" style="top: -2px; left: -0.333333px;">
+                        <img class="photo" src="$2$3" itemprop="image"$5 style="height: 328px; width: 546.667px;">
+                    </a>
+                </div>', $content);
+
+$content = preg_replace('#<img(.*?)src="([^"]*/)?(([^"/]*)\.[^"]*)"([^>]*?)>\-(<br\s*/?>)?#',
+'<div class="photo-box">
+                    <a class="photo-box-inner fancybox" rel="fancybox-thumb" data-fancybox-group="gallery-undefined" title="" href="$2$3" target="_blank" style="top: -2px; left: -0.333333px;">
+                        <img class="photo" src="$2$3" itemprop="image"$5 style="height: 328px; width: 546.667px;">
+                    </a>
+                </div></div></div>', $content);
+
+
+
 $content = preg_replace('#{(.*?)\|(.*?)}#',
         '<ruby>$1<rp> (</rp><rt>$2</rt><rp>) </rp></ruby>', $content);
     return $content;
