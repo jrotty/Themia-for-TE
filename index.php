@@ -141,18 +141,27 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
                         <p style=" margin: 0 0 0em;">
 <?php if (isset($this->fields->d)): ?><?php $this->fields->d(); ?>...
 <?php else: ?>
+<?php if (isset($this->fields->m)): ?>
+   <style>
+p{
+    margin: 0 0 0em;
+}
+        </style>
+        <?php if ($this->options->cdl == '0'): ?><?php $this->content('Continue reading'); ?><?php endif; ?>
+        <?php if ($this->options->cdl == '1'): ?><?php $this->content('继续阅读'); ?><?php endif; ?>
+ <?php else: ?> 
      <?php $this->excerpt(140, '...'); ?> 
-                <?php endif; ?> 
+                <?php endif; ?>       <?php endif; ?> 
 </p>
                     
-                    
+                     <?php if (isset($this->fields->m)): ?> <?php else: ?> 
                         
                             <a  <?php if ($this->fields->l){ ?>href="<?php $this->fields->l(); ?>"  target="_blank"<?php }else{ ?>
 
 href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link link "><?php if ($this->options->cdl == '0'): ?>Continue reading<?php endif; ?><?php if ($this->options->cdl == '1'): ?>继续阅读<?php endif; ?></a>
                             
                         
-
+ <?php endif; ?> 
                    
                 </div>
             </div>
@@ -163,12 +172,12 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
 <?php if (isset($this->fields->x)): ?>    
           
                        <?php else: ?>
-     
+       <?php if (isset($this->fields->m)): ?> <?php else: ?>
           
                 <div class="postShorten-thumbnailimg">
                     <img alt="" itemprop="image" src="<?php showThumbnail($this); ?> "/>
                 </div>
-                <?php endif; ?>    <?php endif; ?> <?php endif; ?> 
+                <?php endif; ?>    <?php endif; ?> <?php endif; ?>  <?php endif; ?> 
                 
             
         </article>
