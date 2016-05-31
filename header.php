@@ -24,6 +24,7 @@
 <meta name="full-screen" content="yes">  
 <meta name="x5-fullscreen" content="true"> <?php endif; ?> 
         <link rel="icon" id="web-icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="<?php $this->options->themeUrl('favicon.png'); ?>"/>
 <link rel="alternative" type="application/atom+xml" title="RSS" href="<?php $this->options->feedUrl(); ?>">
  <meta property="og:image" content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"/>
  <!--STYLES--> <link rel="stylesheet" href="<?php $this->options->themeUrl('fontawesome.css'); ?>" type="text/css">
