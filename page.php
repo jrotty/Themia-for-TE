@@ -105,8 +105,8 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
         
     
     <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <p><?php $this->content(); ?></p>
+        <div class="main-content-wrap" id="yl">
+         <?php $this->content(); ?>
 <?php if (isset($this->fields->t)): ?>
 <div class="image-gallery">
         <div class="image-gallery-metabar">
