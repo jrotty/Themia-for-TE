@@ -309,4 +309,26 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     </div>
 </article>
 
-	<?php $this->need('footer.php'); ?>
+	<?php $this->need('footer.php'); ?><?php if (isset($this->fields->li)): ?>
+<style>
+.fen{
+ display: block;
+}
+@media only screen and (min-width:1024px){
+.fen{
+  float: left;
+    width: 364px;
+   white-space:nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+}
+</style>
+
+<script>
+$('#yl ul li').each(function(){
+  $(this).addClass('fen')
+})  
+
+</script>
+<?php endif; ?> 
