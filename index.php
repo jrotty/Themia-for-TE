@@ -98,12 +98,12 @@ $sticky_posts = $db->fetchAll($this->db
 
      <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">  
 <?php else: ?>
-  <?php if (isset($this->fields->x)): ?>    
+  <?php if(isset($this->fields->x)||isset($this->fields->st)||isset($this->fields->m)): ?>    
                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">   
 
-                       <?php else: ?><?php if (isset($this->fields->st)): ?>   <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">  <?php else: ?>
+                       <?php else: ?>
         <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting" id="article">
-              <?php endif; ?>  <?php endif; ?> 
+              <?php endif; ?> 
                 <?php endif; ?>     
       
             <div class="postShorten-wrap">
