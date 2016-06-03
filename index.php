@@ -197,11 +197,7 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
         <div class="pagination-bar">
 
    <ul class="pagination">
-                   <style>
-a, a:active, a:hover, a:visited {
-    text-decoration: none;
-}
-        </style><!--秘制补丁css,by jrotty-->
+                  
         <li class="pagination-prev">
     <?php if ($this->options->cdl == '0'): ?>
             <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>Previous</span>&nbsp;  </b>','prev'); ?> 
