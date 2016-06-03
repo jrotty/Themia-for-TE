@@ -2105,7 +2105,13 @@ code {
 white-space: pre-wrap;
 word-wrap: break-word;
 }
+a.prev {
+    text-decoration: none;
+}
 
+a.next {
+    text-decoration: none;
+}
 
 
 
