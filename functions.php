@@ -230,7 +230,7 @@ function showThumbnail($widget)
   $patternMD = '/\!\[.*?\]\((http(s)?:\/\/.*?(jpg|png))/i';
     $patternMDfoot = '/\[.*?\]:\s*(http(s)?:\/\/.*?(jpg|png))/i';
 
- if ($attach->isImage) {
+ if ($attach && $attach->isImage) {
       echo $attach->url; 
     } else
 if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
