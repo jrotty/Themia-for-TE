@@ -233,17 +233,6 @@ function setClipboardText(event) {
 
 
 
-  <script src="<?php $this->options->themeUrl('js/jquery.qrcode.min.js'); ?>"></script>
-<script>
-jQuery('#qrcode').qrcode({
-        render	: "canvas",//也可以替换为table
-	width   : 200,
-	height  : 200,
-	text	: "<?php $this->permalink() ?>"
-});
-
-</script>
-
 
 <?php endif; ?>
 
