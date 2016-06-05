@@ -280,10 +280,9 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
 <h3><i class="sidebar-button-icon fa fa-mobile-phone"></i>手机扫描下方二维码</h3>
 <div class="bdsharebuttonbox">
 
-<div id="qrcode"></div>
 
 
-
+<img src="//pan.baidu.com/share/qrcode?w=200&h=200&url=<?php $this->permalink() ?>" alt="<?php $this->title() ?>"/>
 
 </div></center></div>
 </div>
