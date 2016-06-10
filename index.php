@@ -175,7 +175,7 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
        <?php if (isset($this->fields->m)): ?> <?php else: ?>
           
                 <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="<?php showThumbnail($this); ?> "/>
+                    <img alt="" itemprop="image" src="<?php showThumbnail($this); ?>"/>
                 </div>
                 <?php endif; ?>    <?php endif; ?> <?php endif; ?>  <?php endif; ?> 
                 
@@ -200,14 +200,14 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
                   
         <li class="pagination-prev">
     <?php if ($this->options->cdl == '0'): ?>
-            <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>Previous</span>&nbsp;  </b>','prev'); ?> 
-<?php endif; ?><?php if ($this->options->cdl == '1'): ?> <?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>上一页</span>&nbsp;  </b>','prev'); ?> <?php endif; ?>
+            <?php $this->pageLink('<xb class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>Previous</span>&nbsp;  </xb>','prev'); ?> 
+<?php endif; ?><?php if ($this->options->cdl == '1'): ?> <?php $this->pageLink('<xb class="btn btn--default btn--small">&nbsp;<i class="fa fa-angle-left text-base icon-mr"></i><span>上一页</span>&nbsp;  </xb>','prev'); ?> <?php endif; ?>
 
                 </li>
  
         <li class="pagination-next">        
   <?php if ($this->options->cdl == '0'): ?>
-<?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>Next</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?>   <?php endif; ?> <?php if ($this->options->cdl == '1'): ?><?php $this->pageLink('<b class="btn btn--default btn--small">&nbsp;<span>下一页</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</b>','next'); ?> <?php endif; ?>
+<?php $this->pageLink('<xb class="btn btn--default btn--small">&nbsp;<span>Next</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</xb>','next'); ?>   <?php endif; ?> <?php if ($this->options->cdl == '1'): ?><?php $this->pageLink('<xb class="btn btn--default btn--small">&nbsp;<span>下一页</span><i class="fa fa-angle-right text-base icon-ml"></i>&nbsp;</xb>','next'); ?> <?php endif; ?>
         </li>
         
             
