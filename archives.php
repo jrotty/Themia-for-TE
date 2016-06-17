@@ -104,8 +104,11 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
     $output .= '</section>';   
     echo $output;   
 ?>  
+<div id="duoshuo_thread">
+    <?php $this->need('comments.php'); ?>
 
+</div>
 </div>
                   
 
- <?php $this->need('footer2.php');?>
+ <?php $this->need('footer.php');?>
