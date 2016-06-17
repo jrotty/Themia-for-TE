@@ -113,6 +113,9 @@ function parseContent($obj){
 }
 function themeInit($archive)
 {
+	 if ($archive->is('author')) {
+ $archive->parameter->pageSize = 10000; // 自定义条数
+}
     if ($archive->is('single'))
     {
         $archive->content = image_class_replace($archive->content);
