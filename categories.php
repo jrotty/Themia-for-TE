@@ -79,9 +79,12 @@ data-behavior="<?php $this->options->css(); ?>">
                     </ul>
                 </div>
          <?php endwhile; ?>
-        
+        <div id="duoshuo_thread">
+    <?php $this->need('comments.php'); ?>
+
+</div>
     </section>
 </div>
 
   
- <?php $this->need('footer2.php');?>
+ <?php $this->need('footer.php');?>
