@@ -240,7 +240,7 @@ function setClipboardText(event) {
 <script type="text/javascript" src="<?php $this->options->themeUrl('bga.min.js'); ?>"></script><?php endif; ?>
 
 <div class="search_form">
-        <form method="post" action="https://qqdie.com" class="sosuo"> 
+        <form method="post" action="./" class="sosuo"> 
             <input class="search_key" name="s" autocomplete="off" placeholder="Enter search keywords..." type="text" value="" required="required">
 
 
