@@ -236,11 +236,17 @@ function setClipboardText(event) {
     </script> 
 <?php endif; ?> 
 <?php if (!empty($this->options->sidebarBlock) && in_array('kiana', $this->options->sidebarBlock)): ?>
+<script type="text/javascript" src="<?php $this->options->themeUrl('bga.min.js'); ?>"></script><?php endif; ?>
+
+<div class="search_form">
+        <form method="post" action="https://qqdie.com" class="sosuo"> 
+            <input class="search_key" name="s" autocomplete="off" placeholder="Enter search keywords..." type="text" value="" required="required">
 
 
-<script type="text/javascript" src="<?php $this->options->themeUrl('bga.min.js'); ?>"></script><?php endif; ?> 
-
-
+<button type="submit" class="submit"><i class="fa fa-lg fa-search" id="bt"></i></button>
+        </form>
+        <span class="search_close"><i class="fa fa-close" id="close"></i></span>
+    </div>
 <?php $this->footer(); ?> 
     </body>
 </html>
