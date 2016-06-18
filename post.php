@@ -23,7 +23,7 @@
     </time>
     
         <span>in </span>
-    <a class="category-link" ><?php $this->category(',', true, '木有分类或者该分类已被删除'); ?></a> <span>lang </span>
+    <a class="category-link" ><?php if($this->is('post')): ?><?php $this->category(',', true, '木有分类或者该分类已被删除'); ?><?php else: ?><?php $this->title() ?><?php endif;?></a> <span>lang </span>
             <a class="category-link"    id="translateLink" href="javascript:translatePage();">繁</a> 
 <?php if ($this->options->jsq == '0'): ?><?php else: ?>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
@@ -67,7 +67,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     
         <span>in </span>
         
-    <a class="category-link" ><?php $this->category(',', true, '木有分类或者该分类已被删除'); ?></a> <span>lang </span>
+    <a class="category-link" ><?php if($this->is('post')): ?><?php $this->category(',', true, '木有分类或者该分类已被删除'); ?><?php else: ?><?php $this->title() ?><?php endif;?></a> <span>lang </span>
             <a class="category-link"    id="translateLink" href="javascript:translatePage();">繁</a> 
          <?php if ($this->options->jsq == '0'): ?><?php else: ?>
   <span>read (<?php if ($this->options->jsq == '1'): ?><?php get_post_view($this) ?><?php endif; ?><?php if ($this->options->jsq == '2'): ?><?php $this->viewsNum(); ?><?php endif; ?>)</span> 
