@@ -1,3 +1,14 @@
+ <?php if($this->is('post')): ?> 
+
+
+ <nav id="sidebar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
+ <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
+
+data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
+
+<?php else: ?>
+ <nav id="sidebar" data-behavior="<?php $this->options->css(); ?>" >
+<?php endif; ?> 
  <div class="sidebar-profile">
             <a href="/#about">
                     <img class="sidebar-profile-picture" <?php if ($this->options->logoUrl){ ?>src="<?php $this->options->logoUrl();?>"<?php }else{ ?>src="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"<?php };?>/> </a>
@@ -41,7 +52,7 @@
                 </a>
         </li>
         
-            <li class="sidebar-button">
+            <li class="sidebar-button"  id="sou">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
                          href="/#about"
