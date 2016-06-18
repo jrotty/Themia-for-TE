@@ -9,24 +9,7 @@
  */
 ?>
   <?php $this->need('header.php'); ?>
- <header id="header" data-behavior="<?php $this->options->css(); ?>">
- <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="<?php $this->options->siteUrl(); ?>" ><?php $this->options->title(); ?></a>
-    </h1>
-    
-        
-            <a  class="header-right-icon st-search-show-outputs"
-                href="#about">
-        
-                <i class="fa fa-lg fa-search"></i>
-            </a>
-    
-</header>
-
- <nav id="sidebar" data-behavior="<?php $this->options->css(); ?>">
-
-<?php $this->need('sidebar.php'); ?>	  
+ 
 <div id="main" data-behavior="<?php $this->options->css(); ?>"
                  class="
                         hasCoverMetaIn
