@@ -226,15 +226,7 @@ function setClipboardText(event) {
     <!--SCRIPTS-->
 <script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script>
 <?php if($this->is('post')): ?>
-<?php if (!empty($this->options->sidebarBlock) && in_array('kp', $this->options->sidebarBlock)): ?>
 
-
-  <script type="text/javascript" src="<?php $this->options->themeUrl('js/Liang.popup.min.js'); ?>"></script>
-
-
-
-
-<?php endif; ?>
 
 
  <script type="text/javascript">
