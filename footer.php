@@ -46,6 +46,10 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
             <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
                 <i class="fa fa-share-alt"></i>
             </a>
+        </li>  <li class="post-action hide-xs">
+          <a class="post-action-btn btn btn--default" target="new" data-tooltip="分享至Google"  href="https://plus.google.com/share?url=<?php $this->permalink() ?>">
+                <i class="fa fa-google-plus"></i>
+            </a>
         </li>
     <li class="post-action hide-xs">
 <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php $this->permalink() ?>&title=<?php $this->title() ?>&site=<?php $this->options->title(); ?>/&pics=<?php showThumbnail($this); ?>">
@@ -53,11 +57,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
             </a>
             
         </li>
-        <li class="post-action hide-xs">
-           <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至人人网" href="http://widget.renren.com/dialog/share?resourceUrl=<?php $this->permalink() ?>/&srcUrl=<?php $this->permalink() ?>/&pic=<?php showThumbnail($this); ?>&title=<?php $this->title() ?>">
-                <i class="fa fa-renren"></i>
-            </a>
-        </li>
+     
        
   
 
@@ -99,14 +99,14 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
                  <i class="fa fa-weibo"></i><span class="">Share on 新浪微博</span>
             </a>
         </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="http://widget.renren.com/dialog/share?resourceUrl=<?php $this->permalink() ?>/&srcUrl=<?php $this->permalink() ?>/&pic=<?php showThumbnail($this); ?>&title=<?php $this->title() ?>">
-                <i class="fa fa-renren"></i><span>Share on 人人网</span>
-            </a>
-        </li>
+     
         <li class="share-option">
             <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php $this->permalink() ?>&title=<?php $this->title() ?>&site=<?php $this->options->title(); ?>/&pics=<?php showThumbnail($this); ?>">
                 <i class="fa fa-qq"></i><span>Share on QQ空间</span>
+            </a>
+        </li><li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=<?php $this->permalink() ?>">
+                <i class="fa fa-google-plus"></i><span>Share on Google</span>
             </a>
         </li>
     </ul>
