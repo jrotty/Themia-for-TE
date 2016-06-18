@@ -54,10 +54,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
         
             <li class="sidebar-button"  id="sou">
                 
-                    <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#about"
-                        
-                    >
+                    <a  class="sidebar-button-link st-search-show-outputs" >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
                     <span class="sidebar-button-desc"><?php if ($this->options->cdl == '0'): ?>Search<?php endif; ?><?php if ($this->options->cdl == '1'): ?>搜索<?php endif; ?>
