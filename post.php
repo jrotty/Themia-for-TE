@@ -1,29 +1,4 @@
-<?php $this->need('header.php'); ?> <header id="header" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
-
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
-
-
-  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="<?php $this->options->siteUrl(); ?>" ><?php $this->options->title(); ?></a>
-    </h1>
-    
-        
-            <a  class="header-right-icon st-search-show-outputs"
-                href="#about">
-        
-                <i class="fa fa-lg fa-search"></i>
-            </a>
-    
-</header>
-
- <nav id="sidebar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
-
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
-
-<?php $this->need('sidebar.php'); ?>
+<?php $this->need('header.php'); ?>
 
 
 <?php if (isset($this->fields->fm)): ?>
