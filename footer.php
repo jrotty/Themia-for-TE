@@ -114,7 +114,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
 <div id="share-options-mask" class="share-options-mask"></div>
      
 <?php endif; ?>
-   </div>
+   </div></div>
         <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
@@ -225,6 +225,7 @@ function setClipboardText(event) {
 
     <!--SCRIPTS-->
 <script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php $this->options->themeUrl('js/kz.js'); ?>" type="text/javascript"></script>
 <?php if($this->is('post')): ?>
 
 
