@@ -26,7 +26,35 @@
         <link rel="icon" id="web-icon" href="/favicon.ico">
         <link rel="apple-touch-icon" href="<?php $this->options->themeUrl('favicon.png'); ?>"/>
 <link rel="alternative" type="application/atom+xml" title="RSS" href="<?php $this->options->feedUrl(); ?>">
- <meta property="og:image" content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"/>
+
+ 
+  <meta property="og:image" <?php if($this->is('post')||$this->is('page')): ?>
+content="<?php showThumbnail($this); ?>"<?php else: ?>
+<?php if ($this->options->logoUrl){ ?>content="<?php $this->options->logoUrl();?>"<?php }else{ ?>content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"<?php };?><?php endif; ?>>
+<meta property="og:title" content="<?php $this->archiveTitle(array(
+'category'=>_t('分类 %s 下的文章'),
+'search'=>_t('包含关键字 %s 的文章'),
+'tag' =>_t('标签 %s 下的文章'),
+'author'=>_t('%s 的主页')
+), '', ' - '); ?><?php $this->options->title(); ?>"/>
+
+<meta property="og:description" content="<?php if($this->is('index')): ?> <?php $this->options->description() ?>
+<?php else: ?><?php $this->description(); ?><?php endif; ?>">  
+
+<meta property="og:url" content="<?php $this->permalink() ?>"/>  
+
+<meta itemprop="name" content="<?php $this->archiveTitle(array(
+'category'=>_t('分类 %s 下的文章'),
+'search'=>_t('包含关键字 %s 的文章'),
+'tag' =>_t('标签 %s 下的文章'),
+'author'=>_t('%s 的主页')
+), '', ' - '); ?><?php $this->options->title(); ?>">
+<meta itemprop="description" content="<?php if($this->is('index')): ?> <?php $this->options->description() ?>
+<?php else: ?><?php $this->description(); ?><?php endif; ?>">
+<meta itemprop="image" <?php if($this->is('post')||$this->is('page')): ?>
+content="<?php showThumbnail($this); ?>"<?php else: ?>
+<?php if ($this->options->logoUrl){ ?>content="<?php $this->options->logoUrl();?>"<?php }else{ ?>content="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"<?php };?><?php endif; ?>>
+ 
  <!--STYLES--> <link rel="stylesheet" href="<?php $this->options->themeUrl('fontawesome.css'); ?>" type="text/css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css'); ?>" type="text/css">
 <?php if($this->options->page_suo == 'display'):?>
