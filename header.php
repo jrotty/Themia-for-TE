@@ -51,3 +51,44 @@
 		 <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 	    <![endif]-->
 
+<?php if($this->is('post')): ?> 
+
+
+
+<header id="header" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
+ <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
+
+data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
+
+
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="<?php $this->options->siteUrl(); ?>" ><?php $this->options->title(); ?></a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                id="sou">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>    
+</header>
+<?php else: ?>
+ <header id="header" data-behavior="<?php $this->options->css(); ?>">
+ <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="<?php $this->options->siteUrl(); ?>" ><?php $this->options->title(); ?></a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                id="sou">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>
+    
+</header>
+
+<?php endif; ?>
+
+<?php $this->need('sidebar.php'); ?>
