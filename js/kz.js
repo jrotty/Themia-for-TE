@@ -26,7 +26,7 @@ $("li#sou").click(function () {
 $('.postShorten-title a').each(function(){
         $(this).click(function(){
             myloadoriginal = this.text;
-            $(this).text('少女正在祈祷中...');
+            $(this).text('正在加载中...');
             var myload = this;
             setTimeout(function() { $(myload).text(myloadoriginal); }, 2011);
         });
