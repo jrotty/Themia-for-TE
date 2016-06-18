@@ -4,5 +4,4 @@
 $('#yl ul li').each(function(){
   $(this).addClass('fen')
 })  
-}
 </SCRIPT>
