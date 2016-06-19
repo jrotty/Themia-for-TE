@@ -36,7 +36,7 @@ a, a:active, a:hover, a:visited {
                             <?php $children = $categorys->getAllChildren($categorys->mid); ?>
                             <?php if (empty($children)) { ?>
                              
-                                    <a href="#posts-list-<?php $categorys->name(); ?>" class="category category--small category--primary"  data-category="<?php $categorys->name(); ?>" ><?php $categorys->name(); ?>(<?php $categorys->count(); ?>)
+                                    <a href="#posts-list-<?php $categorys->slug(); ?>" class="category category--small category--primary"  data-category="<?php $categorys->name(); ?>" ><?php $categorys->name(); ?>(<?php $categorys->count(); ?>)
                                         </a>
                                 
                          
@@ -51,14 +51,14 @@ a, a:active, a:hover, a:visited {
                             <?php if (empty($children)) { ?>
                         <?php } else { ?>
                             <br>
- <a class="category category--small category--primaryb"  data-category="<?php $categorys->name(); ?>"  onclick="var fu = document.getElementById('<?php $categorys->name(); ?>'); if (fu.style.display === 'none') {fu.style.display='inline';} else {fu.style.display='none'}" ><?php $categorys->name(); ?>&nbsp;<i class="fa fa-chevron-circle-right"></i>
+ <a class="category category--small category--primaryb"  data-category="<?php $categorys->name(); ?>"  onclick="var fu = document.getElementById('<?php $categorys->name(); ?>'); if (fu.style.display === 'none') {fu.style.display='inline';} else {fu.style.display='none'}"  target="_blank"><?php $categorys->name(); ?>&nbsp;<i class="fa fa-chevron-circle-right"></i>
                                         </a>
                                  <div id="<?php $categorys->name(); ?>" style="display: none;">
                                         <?php foreach ($children as $mid) { ?>
                                             <?php $child = $categorys->getCategory($mid); ?>
                                            
 
-<a href="#posts-list-<?php echo $child['name']; ?> " class="category category--small category--primary"  data-category="<?php echo $child['name']; ?>" ><?php echo $child['name']; ?>(<?php echo $child['count']; ?>)</a>
+<a href="#posts-list-<?php echo $child['slug']; ?> " class="category category--small category--primary"  data-category="<?php echo $child['name']; ?>" ><?php echo $child['name']; ?>(<?php echo $child['count']; ?>)</a>
                                          
                                         <?php } ?>
                                    </div>
@@ -80,7 +80,7 @@ a, a:active, a:hover, a:visited {
 
              
                     <h4 class="archive-title">
-                        <a href="<?php $categories->permalink(); ?>" class="link-unstyled" id="posts-list-<?php $categories->name(); ?>"><?php $categories->name(); ?></a>
+                        <a href="<?php $categories->permalink(); ?>" class="link-unstyled" id="posts-list-<?php $categories->slug(); ?>"><?php $categories->name(); ?></a>
                     </h4>
                     <ul class="archive-posts">
 <?php while ($posts->next()): ?> 
@@ -96,15 +96,6 @@ a, a:active, a:hover, a:visited {
                     </ul>
                 </div>
 <?php else: ?>
-
-
-
-
-
-
-
-
-
 
 <?php endif; ?>
          <?php endwhile; ?>
