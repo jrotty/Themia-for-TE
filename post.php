@@ -98,10 +98,10 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
       
         <div id="wechat" style="display: inline-block;    padding-right: 7px;">
          <img id="wechat_qr" src="https://qqdie.com/usr/uploads/2016/05/1196403231.png" alt="jrotty WeChat Pay" >
-          <p>微信打赏</p>
+          <p style=" text-indent: 0em; margin-left:-0em;">微信打赏</p>
         </div>
         <div id="alipay" style="display: inline-block;    padding-left: 7px;"><img id="alipay_qr" <?php if ($this->options->zfbUrl){ ?>src="<?php $this->options->zfbUrl();?>"<?php }else{ ?>src="https://qqdie.com/usr/uploads/2016/05/3220161479.png"<?php };?> alt="jrotty Alipay">
-          <p>支付宝打赏</p>
+          <p style=" text-indent: 0em; margin-left:-0em;">支付宝打赏</p>
         </div>
     
     </div>
@@ -113,7 +113,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
     <div id="erweima" style="display: inline-block">
 
 <img id="erwei_qr" src="https://pan.baidu.com/share/qrcode?w=143&h=143&url=<?php $this->permalink() ?>"/>
- <p>文章二维码</p>
+ <p style=" text-indent: 0em; margin-left:-0em;">文章二维码</p>
  </div>
     </div>
 
