@@ -16,16 +16,6 @@
                 <div id="categories-archives" class="main-content-wrap">
 
          <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
-
-<style>
-a, a:active, a:hover, a:visited {
-    text-decoration: none;
-}
-.category--primary, a.category--primaryb {
-    color: #212427!important;
-    border: 1px solid #64b5f6;
-}
-</style>
     <h4 class="archive-result text-color-base text-xlarge"> </h4>
    <section>
 
@@ -36,7 +26,7 @@ a, a:active, a:hover, a:visited {
                             <?php $children = $categorys->getAllChildren($categorys->mid); ?>
                             <?php if (empty($children)) { ?>
                              
-                                    <a href="#posts-list-<?php $categorys->slug(); ?>" class="category category--small category--primary"  data-category="<?php $categorys->name(); ?>" ><?php $categorys->name(); ?>(<?php $categorys->count(); ?>)
+                                    <a href="#posts-list-<?php $categorys->slug(); ?>" class="tag tag--primary tag--small t-link"  data-category="<?php $categorys->name(); ?>" ><?php $categorys->name(); ?>(<?php $categorys->count(); ?>)
                                         </a>
                                 
                          
@@ -51,14 +41,14 @@ a, a:active, a:hover, a:visited {
                             <?php if (empty($children)) { ?>
                         <?php } else { ?>
                             <br>
- <a class="category category--small category--primaryb"  data-category="<?php $categorys->name(); ?>"  onclick="var fu = document.getElementById('<?php $categorys->name(); ?>'); if (fu.style.display === 'none') {fu.style.display='inline';} else {fu.style.display='none'}"  target="_blank"><?php $categorys->name(); ?>&nbsp;<i class="fa fa-chevron-circle-right"></i>
+ <a class="tag tag--primary tag--small t-link"  data-category="<?php $categorys->name(); ?>"  onclick="var fu = document.getElementById('<?php $categorys->name(); ?>'); if (fu.style.display === 'none') {fu.style.display='inline';} else {fu.style.display='none'}"  target="_blank"><?php $categorys->name(); ?>&nbsp;<i class="fa fa-chevron-circle-right"></i>
                                         </a>
                                  <div id="<?php $categorys->name(); ?>" style="display: none;">
                                         <?php foreach ($children as $mid) { ?>
                                             <?php $child = $categorys->getCategory($mid); ?>
                                            
 
-<a href="#posts-list-<?php echo $child['slug']; ?> " class="category category--small category--primary"  data-category="<?php echo $child['name']; ?>" ><?php echo $child['name']; ?>(<?php echo $child['count']; ?>)</a>
+<a href="#posts-list-<?php echo $child['slug']; ?> " class="tag tag--primary tag--small t-link"  data-category="<?php echo $child['name']; ?>" ><?php echo $child['name']; ?>(<?php echo $child['count']; ?>)</a>
                                          
                                         <?php } ?>
                                    </div>
