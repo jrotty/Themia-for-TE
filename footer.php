@@ -126,10 +126,7 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
         <a href="<?php $this->options->adminUrl('login.php'); ?>" target="_blank">        <?php endif; ?> <img id="about-card-picture" <?php if ($this->options->logoUrl){ ?>src="<?php $this->options->logoUrl();?>"<?php }else{ ?>src="<?php $this->options->themeUrl('image/avatar.jpg'); ?>"<?php };?>/></a>
         
             <h4 id="about-card-name">  <?php $this->author() ?></h4>
-<form id="search" method="post" action="./" role="search">
-<input type="text" name="s" class="text" placeholder="输入关键字搜索">
-<button type="submit" class="submit" ><i class="fa fa-lg fa-search"></i></button>
-</form> <h5 id="about-card-bio"><p><?php $this->options->description() ?>
+ <h5 id="about-card-bio"><p><?php $this->options->description() ?>
 </p>
 <SCRIPT language=javascript>
 <!--
