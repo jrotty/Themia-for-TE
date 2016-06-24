@@ -225,6 +225,10 @@ function setClipboardText(event) {
 
     <!--SCRIPTS-->
 <script src="<?php $this->options->themeUrl('js/script.min.js'); ?>" type="text/javascript"></script>
+<!--PANGU AUTO SPACE-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.0.0/pangu.min.js"></script>
+<script> pangu.spacingPage(); </script>
+<!--PANGU AUTO SPACE END-->
 <script src="<?php $this->options->themeUrl('js/kz.js'); ?>" type="text/javascript"></script>
 <?php if($this->is('post')): ?>
 
