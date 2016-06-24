@@ -13,7 +13,7 @@
 
 
 
-<?php if($this->is('post')||$this->is('page')): ?>
+<?php if($this->is('post')): ?>
 
 
     <div id="bottom-bar" class="post-bottom-bar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
@@ -228,9 +228,6 @@ function setClipboardText(event) {
 <!--PANGU AUTO SPACE END-->
 <script src="<?php $this->options->themeUrl('js/kz.js'); ?>" type="text/javascript"></script>
 <?php if($this->is('post')): ?>
-
-
-
  <script type="text/javascript">
         $(document).ready(function(){ 
             $('.tag sx').replaceWith('<?php $this->category('<div id="div" style="display: none" onMouseout="hidden();">', true, '木有标签且木有分类或者该分类已被删除'); ?></div>'); 
