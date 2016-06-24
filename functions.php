@@ -77,8 +77,11 @@ $form->addInput($css->multiMode());
     $form->addInput($sidebarBlock->multiMode());
 
 
-  $zfbUrl = new Typecho_Widget_Helper_Form_Element_Text('zfbUrl', NULL, NULL, _t('支付宝付款二维码'), _t('这里添加付款二维码的图片地址，不添加则默认jrotty的支付宝二维码'));
+  $zfbUrl = new Typecho_Widget_Helper_Form_Element_Text('zfbUrl', NULL, NULL, _t('支付宝收款二维码'), _t('这里添加收款二维码的图片地址，不添加则默认jrotty的支付宝二维码'));
     $form->addInput($zfbUrl);
+
+$wxUrl = new Typecho_Widget_Helper_Form_Element_Text('wxUrl', NULL, NULL, _t('微信收款二维码'), _t('这里添加收款二维码的图片地址，不添加则默认jrotty的微信二维码'));
+    $form->addInput($wxUrl);
 
   $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（最后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择非插件项，同时禁用Star插件，以免重复计数【不禁用的话，计数器计数会翻倍】"));
     $form->addInput($jsq); 
