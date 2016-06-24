@@ -89,11 +89,7 @@
 
 <?php endif; ?>
          <?php endwhile; ?>
-        
-<div id="duoshuo_thread">
-    <?php $this->need('comments.php'); ?>
 
-</div>
 
 
 
