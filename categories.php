@@ -76,7 +76,7 @@
 <?php while ($posts->next()): ?> 
                             <li class="archive-post">
                                 <a class="archive-post-title" href="<?php $posts->permalink(); ?>"><?php $posts->title(40); ?></a>
-                                <span class="archive-post-date">-<?php $posts->date('M d,Y'); ?></span>
+                                <span class="archive-post-date"><?php $posts->date('M d,Y'); ?></span>
                             </li>
                         
                         
