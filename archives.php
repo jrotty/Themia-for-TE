@@ -72,7 +72,7 @@
 
         $output .= '  <li class="archive-post archive-day" data-date="'. $year .''. $mon .''.date('d',$archives->created).'">
                 <a class="archive-post-title" href="'.$archives->permalink .'">'. $archives->title .'</a>
-                <span class="archive-post-date"> - '.date('M',$archives->created).' '.date('d',$archives->created).', '. $year .'</span>
+                <span class="archive-post-date"> '.date('M',$archives->created).' '.date('d',$archives->created).', '. $year .'</span>
             </li>
 '; //输出文章日期和标题   
     endwhile;   
