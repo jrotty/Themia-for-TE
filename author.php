@@ -12,8 +12,7 @@
 <div id="archives" class="main-content-wrap"><section class="boxes"  id="disqus_thread"><?php if ($this->have()): ?> 
 
 <h4 class="archive-title">
-           <?php $this->author() ?>的信息<aux> <?php $this->author->gravatar(100);
-?></aux>
+           <?php $this->author() ?>的信息<img src="https://secure.gravatar.com/avatar/<?php echo md5($this->author->mail); ?>?s=100" class="txtx">
         </h4>
  <ul>
 <li style="display: block;">称呼：<?php $this->author() ?>  </li>
@@ -77,13 +76,4 @@ float:right;
 border-radius:50px; 
 }
 </style>
-<script>
-$('aut a img').each(function(){
-  $(this).addClass('sidebar-profile-picture');
 
-})
-$('aux img').each(function(){
-  $(this).addClass('txtx');
-
-})
-</script>
