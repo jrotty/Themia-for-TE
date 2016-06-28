@@ -1,4 +1,4 @@
- <?php if($this->is('post')): ?> 
+ <?php if($this->is('post') || $this->is('page')): ?> 
 
 
  <nav id="sidebar" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
