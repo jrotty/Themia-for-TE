@@ -206,7 +206,7 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
     </ul>
 </div>
  <?php else: ?>
-<article class="postShorten" itemtype="http://schema.org/BlogPosting" id="article"> <div class="postShorten-wrap"> <div class="postShorten-header"> <h1 class="postShorten-title" itemprop="headline"> <a class="link-unstyled" >搜索内容不存在</a> </h1> </div> </div> </article> <?php endif; ?>
+<?php if ($this->is('category')) : ?>该分类下没有任何文章。<?php else: ?><?php if ($this->is('tag')) : ?>该标签下没有任何文章。<?php else: ?>暂无与之相关文章<?php endif; ?><?php endif; ?><?php endif; ?>
 </section>
 
 
