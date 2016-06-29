@@ -3,7 +3,8 @@
 
 <?php if (isset($this->fields->fm)): ?>
 <div class="post-header-cover
-                    text-left
+                    <?php if($this->options->tf == 'open'||$this->options->tf == 'more'):?>
+text-center<?php else: ?>text-left<?php endif; ?>
                     " style="background-image:url('<?php $this->fields->fm(); ?>');" data-behavior="3">
             
               <div class="post-header main-content-wrap text-center">
@@ -49,7 +50,8 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
 <?php if (isset($this->fields->fm)): ?><?php else: ?>
-<div class="post-header main-content-wrap text-left">
+<div class="post-header main-content-wrap <?php if($this->options->tf == 'open'||$this->options->tf == 'more'):?>
+text-center<?php else: ?>text-left<?php endif; ?>">
     
            <?php if (isset($this->fields->l)): ?><h1 itemprop="headline">
        <a class="link" href="<?php $this->fields->l(); ?>" target="_blank" itemprop="url"><?php $this->title() ?></a>
