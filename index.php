@@ -135,7 +135,7 @@ p{
                 <?php endif; ?>       <?php endif; ?> 
 </p>
                     
-                     <?php if (isset($this->fields->m)): ?> <?php else: ?> 
+                     <?php if (isset($this->fields->m)||$this->options->tf == 'more'): ?> <?php else: ?> 
                         
                             <a  <?php if ($this->fields->l){ ?>href="<?php $this->fields->l(); ?>"  target="_blank"<?php }else{ ?>
 
