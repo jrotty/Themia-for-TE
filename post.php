@@ -82,8 +82,8 @@ text-center<?php else: ?>text-left<?php endif; ?>">
 </div>
 <?php endif; ?>    
  <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-
+        <div class="main-content-wrap" id="yl"><?php if (!empty($this->options->sidebarBlock) && in_array('mulu', $this->options->sidebarBlock)): ?>
+<?php if($this->is('post')): ?><tree id="mulu"></tree><?php endif; ?><?php endif; ?>
      <?php $this->content(); ?>
  </div>
     </div>
