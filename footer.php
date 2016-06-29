@@ -227,6 +227,11 @@ function setClipboardText(event) {
 <script> pangu.spacingPage(); </script>
 <!--PANGU AUTO SPACE END-->
 <script src="<?php $this->options->themeUrl('js/kz.js'); ?>" type="text/javascript"></script>
+<?php if (!empty($this->options->sidebarBlock) && in_array('mulu', $this->options->sidebarBlock)): ?>
+<?php if($this->is('post')): ?>
+<script language="javascript" type="text/javascript">GenerateContentList();
+</script><?php endif; ?><?php endif; ?>
+
 <?php if($this->is('post')): ?>
  <script type="text/javascript">
         $(document).ready(function(){ 
