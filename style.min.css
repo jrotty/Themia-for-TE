@@ -808,3 +808,8 @@ textarea.text-area {
 
     -o-box-sizing: border-box;
 }
+@media only screen and (min-width:767px){
+#mulu {
+    float: right;
+}
+}
