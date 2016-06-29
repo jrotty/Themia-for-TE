@@ -768,7 +768,7 @@ i#bt{
     color: #6e7173;
     border-bottom: 1px solid #ddd;
 }
-button.submit {
+#comments button.submit {
     line-height: 32px;
     opacity: 1;
     display: block;
@@ -782,7 +782,7 @@ button.submit {
     background: #272727;
 }
 
-button.submit:hover {
+#comments button.submit:hover {
     border-color: #505050;
     background: #505050;
 }
