@@ -57,6 +57,9 @@ content="<?php showThumbnail($this); ?>"<?php else: ?>
  
  <!--STYLES--> <link rel="stylesheet" href="<?php $this->options->themeUrl('fontawesome.css'); ?>" type="text/css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.min.css'); ?>" type="text/css">
+    <?php if($this->options->tf == 'open'||$this->options->tf == 'more'):?>
+<style>.postShorten-header {text-align: center;}</style>
+<?php endif; ?>
 <?php if($this->options->page_suo == 'display'):?>
 <style> p{text-indent: 2em;}p iframe{margin-left:-2em;} </style>
 <?php endif; ?>
