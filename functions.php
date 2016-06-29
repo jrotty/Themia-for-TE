@@ -76,6 +76,7 @@ $form->addInput($css->multiMode());
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
     array('kp' => _t('文章中加入跨屏浏览二维码，支付宝打赏，及文章版权声明')
 ,
+'mulu' => _t('开启文章目录树功能'),
 	'bjq' => _t('文章内容增强，加入最后编辑时间'),
 	'Showfull' => _t('手机浏览器强制全屏，仅限于uc和QQ浏览器')
 ,'Showcolor' => _t('手机谷歌浏览器状态栏颜色渲染为白色'),
