@@ -81,7 +81,7 @@ $sticky_posts = $db->fetchAll($this->db
 
      <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">  
 <?php else: ?>
-  <?php if(isset($this->fields->x)||isset($this->fields->st)||isset($this->fields->m)): ?>    
+  <?php if(isset($this->fields->x)||isset($this->fields->m)): ?>    
                <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">   
 
                        <?php else: ?>
@@ -118,9 +118,7 @@ href="<?php $this->permalink() ?>"<?php };?>><?php $this->title() ?></a>
     
 </div>
                 </div>
-                <div class="postShorten-excerpt" itemprop="articleBody">        <?php if (!empty($this->options->sidebarBlock) && in_array('simg', $this->options->sidebarBlock)): ?>
-<?php else: ?>
-                 <?php if (isset($this->fields->st)): ?>   <p><img src="<?php showThumbnail($this); ?>" alt=""></p> <?php endif; ?> <?php endif; ?> 
+                <div class="postShorten-excerpt" itemprop="articleBody">        
                         <p style=" margin: 0 0 0em;">
 <?php if (isset($this->fields->d)): ?><?php $this->fields->d(); ?>...
 <?php else: ?>
@@ -153,31 +151,15 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
             
              <?php if (!empty($this->options->sidebarBlock) && in_array('simg', $this->options->sidebarBlock)): ?>
 <?php else: ?>
- <?php if (isset($this->fields->st)): ?>  <?php else: ?>
-<?php if (isset($this->fields->x)): ?>    
-          
+<?php if (isset($this->fields->x)||isset($this->fields->m)): ?>    
                        <?php else: ?>
-       <?php if (isset($this->fields->m)): ?> <?php else: ?>
-          
                 <div class="postShorten-thumbnailimg">
                     <img alt="" itemprop="image" src="<?php showThumbnail($this); ?>"/>
                 </div>
-                <?php endif; ?>    <?php endif; ?> <?php endif; ?>  <?php endif; ?> 
-                
-            
+                <?php endif; ?>  <?php endif; ?>   
         </article>
     
-        
             <?php endwhile; ?> 
-        
-        
-    
-        
-             
-
-     
-           
-    
         
         <div class="pagination-bar">
 
@@ -208,7 +190,4 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
  <?php else: ?>
 <?php if ($this->is('category')) : ?>该分类下没有任何文章。<?php else: ?><?php if ($this->is('tag')) : ?>该标签下没有任何文章。<?php else: ?>暂无与之相关文章<?php endif; ?><?php endif; ?><?php endif; ?>
 </section>
-
-
-
 	<?php $this->need('footer.php'); ?>
