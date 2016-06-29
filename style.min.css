@@ -602,7 +602,15 @@ i#bt{
     padding: 1px 4px;
     border-radius: 5px;
 }
-
+.comments .comment-about:first-child {
+    padding-left: 0;
+}
+.comments .comment-about {
+    width: 33.333%;
+    float: left;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
 .comment-meta {
     margin-top: -5px;
     margin-bottom: 5px;
@@ -750,10 +758,19 @@ i#bt{
 
     -o-box-sizing: border-box;
 }
-
+#comments .widget-title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2.7;
+    display: block;
+    margin: 0;
+    padding-bottom: 0;
+    color: #6e7173;
+    border-bottom: 1px solid #ddd;
+}
 button.submit {
     line-height: 32px;
-
+    opacity: 1;
     display: block;
 
     width: 100%;
@@ -769,7 +786,9 @@ button.submit:hover {
     border-color: #505050;
     background: #505050;
 }
-
+#comments p {
+    margin: 0 0 10px;
+}
 textarea.text-area {
     font-size: 14px;
     line-height: 1.8;
