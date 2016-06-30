@@ -140,8 +140,7 @@ p{
                             <a  <?php if ($this->fields->l){ ?>href="<?php $this->fields->l(); ?>"  target="_blank"<?php }else{ ?>
 
 href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link link ">
-   <?php if ($this->fields->l){ ?><?php if ($this->options->cdl == '0'): ?>OPEN LINK<?php endif; ?><?php if ($this->options->cdl == '1'): ?>打开链接<?php endif; ?><?php }else{ ?><?php if ($this->options->cdl == '0'): ?>Continue reading<?php endif; ?><?php if ($this->options->cdl == '1'): ?>继续阅读<?php endif; ?> <?php };?>                         	
-                            	</a>
+   <?php if ($this->fields->l){ ?><?php if ($this->options->cdl == '0'): ?>OPEN LINK<?php endif; ?><?php if ($this->options->cdl == '1'): ?>打开链接<?php endif; ?><?php }else{ ?><?php if ($this->options->cdl == '0'): ?>Continue reading<?php endif; ?><?php if ($this->options->cdl == '1'): ?>继续阅读<?php endif; ?> <?php };?> </a>
                             
                         
  <?php endif; ?> 
