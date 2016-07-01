@@ -191,12 +191,16 @@ text-center<?php else: ?>text-left<?php endif; ?>">
                 </a>
             </li>
         
-        <li class="post-action">
-            
+        <li class="post-action"><?php if($this->is('post')): ?>
+            <?php if (!empty($this->options->sidebarBlock) && in_array('mulu', $this->options->sidebarBlock)): ?>
+<a class="post-action-btn btn btn--default" href="#mulu">
+                <i class="fa fa-list"></i>
+            </a><?php else: ?>
+
                 <a class="post-action-btn btn btn--default"  href="#" onclick="gotoTop();return false;">
             
                <i class="fa fa-arrow-up"></i>
-            </a>
+            </a><?php endif; ?><?php endif; ?>
         </li>
     </ul>
 </div>
