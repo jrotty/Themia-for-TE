@@ -75,11 +75,16 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
             </li>
         
         <li class="post-action">
-            
+             <?php if (!empty($this->options->sidebarBlock) && in_array('mulu', $this->options->sidebarBlock)): ?>
+<a class="post-action-btn btn btn--default" href="#mulu">
+                <i class="fa fa-list"></i>
+            </a><?php else: ?>
+
                 <a class="post-action-btn btn btn--default"  href="#" onclick="gotoTop();return false;">
             
-             <i class="fa fa-arrow-up"></i>
-            </a>
+               <i class="fa fa-arrow-up"></i>
+            </a><?php endif; ?>
+               
         </li>
     </ul>
 </div>
