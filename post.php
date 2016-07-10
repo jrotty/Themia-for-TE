@@ -1,7 +1,7 @@
 <?php $this->need('header.php'); ?>
 
 
-<?php if (isset($this->fields->fm)): ?>
+<?php if ($this->fields->fm): ?>
 <div class="post-header-cover
                     <?php if($this->options->tf == 'open'||$this->options->tf == 'more'):?>
 text-center<?php else: ?>text-left<?php endif; ?>
@@ -9,7 +9,7 @@ text-center<?php else: ?>text-left<?php endif; ?>
             
               <div class="post-header main-content-wrap text-center">
     
-     <?php if (isset($this->fields->l)): ?><h1 itemprop="headline">
+     <?php if ($this->fields->l): ?><h1 itemprop="headline">
        <a class="link" href="<?php $this->fields->l(); ?>" target="_blank" itemprop="url"><?php $this->title() ?></a>
         </h1>
 
@@ -49,11 +49,11 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
 
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
-<?php if (isset($this->fields->fm)): ?><?php else: ?>
+<?php if ($this->fields->fm): ?><?php else: ?>
 <div class="post-header main-content-wrap <?php if($this->options->tf == 'open'||$this->options->tf == 'more'):?>
 text-center<?php else: ?>text-left<?php endif; ?>">
     
-           <?php if (isset($this->fields->l)): ?><h1 itemprop="headline">
+           <?php if ($this->fields->l): ?><h1 itemprop="headline">
        <a class="link" href="<?php $this->fields->l(); ?>" target="_blank" itemprop="url"><?php $this->title() ?></a>
         </h1>
 
