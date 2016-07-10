@@ -2,7 +2,7 @@
 
 
     <span class="copyrights">
- &copy; 2016 <?php $this->author() ?>'s /
+ &copy; 2016 <?php $this->options->title(); ?> /
  Power By <a  target="_blank"  href="http://typecho.org/">Typecho</a> 
 / Designed By <a  target="_blank"  href="http://qqdie.com/">Jrotty</a>
 / Loading time <?php timer_stop($this) ?>s
