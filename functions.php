@@ -69,7 +69,7 @@ $form->addInput($css->multiMode());
         'close' => _t('不启用')
         ), 
     'close', 
-    _t('文章标题居中风格'), _t('默认不启用，启用后文章缩略图会关闭显示，并且文章标题，分类等信息居中'));
+    _t('文章标题居中风格'), _t('默认不启用，启用后文章缩略图会关闭显示，并且文章标题，分类等信息居中，该风格启用后，建议关闭置顶功能，否则会影响美观度。'));
     $form->addInput($tf);
     //工具开关
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
