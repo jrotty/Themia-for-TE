@@ -225,7 +225,6 @@ array_push($views, $cid);
     }
     echo $row['views'];
 }
-}
 
 function timer_start() {
 global $timestart;
