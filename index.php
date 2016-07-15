@@ -81,12 +81,9 @@ $sticky_posts = $db->fetchAll($this->db
 
      <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">  
 <?php else: ?>
-  <?php if($this->fields->x||$this->fields->m||$this->options->tf == 'open'||$this->options->tf == 'more'): ?>    
-               <article class="postShorten" itemscope itemType="http://schema.org/BlogPosting" id="article">   
 
-                       <?php else: ?>
-        <article class="postShorten postShorten--thumbnailimg" itemscope itemType="http://schema.org/BlogPosting" id="article">
-              <?php endif; ?> 
+        <article class="postShorten postShorten--thumbnailimg-<?php if($this->options->tf == 'more'||isset($this->fields->x)||isset($this->fields->m)):?>bottom<?php else: ?>right<?php endif; ?>" itemscope itemType="http://schema.org/BlogPosting" id="article">
+          
                 <?php endif; ?>     
       
             <div class="postShorten-wrap">
@@ -150,7 +147,7 @@ href="<?php $this->permalink() ?>"<?php };?> class="postShorten-excerpt_link lin
             
              <?php if (!empty($this->options->sidebarBlock) && in_array('simg', $this->options->sidebarBlock)): ?>
 <?php else: ?>
-<?php if ($this->fields->x||$this->fields->m||$this->options->tf == 'open'||$this->options->tf == 'more'): ?>    
+<?php if ($this->fields->x||$this->fields->m||$this->options->tf == 'more'): ?>    
                        <?php else: ?>
                 <div class="postShorten-thumbnailimg">
                     <img alt="" itemprop="image" src="<?php showThumbnail($this); ?>"/>
