@@ -99,10 +99,10 @@ text-center<?php else: ?>text-left<?php endif; ?>">
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block;    padding-right: 7px;">
-         <img id="wechat_qr" <?php if ($this->options->wxUrl){ ?>src="<?php $this->options->wxUrl();?>"<?php }else{ ?>src="https://qqdie.com/usr/uploads/2016/05/1196403231.png"<?php };?> alt="jrotty WeChat Pay" >
+         <img id="wechat_qr" <?php if ($this->options->wxUrl){ ?>src="<?php $this->options->wxUrl();?>"<?php }else{ ?>src="<?php $this->options->themeUrl('image/wx.jpg'); ?>"<?php };?> alt="jrotty WeChat Pay" >
           <p style=" text-indent: 0em; margin-left:-0em;">微信打赏</p>
         </div>
-        <div id="alipay" style="display: inline-block;    padding-left: 7px;"><img id="alipay_qr" <?php if ($this->options->zfbUrl){ ?>src="<?php $this->options->zfbUrl();?>"<?php }else{ ?>src="https://qqdie.com/usr/uploads/2016/05/3220161479.png"<?php };?> alt="jrotty Alipay">
+        <div id="alipay" style="display: inline-block;    padding-left: 7px;"><img id="alipay_qr" <?php if ($this->options->zfbUrl){ ?>src="<?php $this->options->zfbUrl();?>"<?php }else{ ?>src="<?php $this->options->themeUrl('image/tb.jpg'); ?>"<?php };?> alt="jrotty Alipay">
           <p style=" text-indent: 0em; margin-left:-0em;">支付宝打赏</p>
         </div>
     
