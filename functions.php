@@ -80,7 +80,8 @@ $form->addInput($css->multiMode());
 	'Showfull' => _t('手机浏览器强制全屏，仅限于uc和QQ浏览器')
 ,'Showcolor' => _t('手机谷歌浏览器状态栏颜色渲染为白色'),
 	'kiana' => _t('kiana封印解除'),
-	'simg' => _t('全局不显示文章缩略图')
+	'simg' => _t('全局不显示文章缩略图'),
+	'pltx' => _t('评论列表头像自动翻墙')
 ,),
     array('Showcolor','bjq'), _t('工具开关'));
     $form->addInput($sidebarBlock->multiMode());
