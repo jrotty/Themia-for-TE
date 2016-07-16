@@ -1,3 +1,4 @@
+<?php if (!empty($this->options->sidebarBlock) && in_array('pltx', $this->options->sidebarBlock)): ?>
 <?php function threadedComments($comments, $options) {
     $commentClass = '';
     if ($comments->authorId) {
@@ -48,7 +49,7 @@ echo $commentClass;
 <?php } ?>
 </li>
 <?php } ?>
-
+<?php endif; ?> 
 <div class="comments" id="comments">
     <?php $this->comments()->to($comments);?>
     <?php if ($comments->have()): ?>
