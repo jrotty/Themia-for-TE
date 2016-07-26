@@ -4,7 +4,7 @@
  * 
  * @package Themia
  * @author Jrotty
- * @version 3.7.2
+ * @version 3.7.3
  * @link http://qqdie.com
  */
 ?>
