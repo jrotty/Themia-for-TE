@@ -37,13 +37,8 @@ text-center<?php else: ?>text-left<?php endif; ?>
 
 
 
-   <div id="main" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
- <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
-
-data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>
-                 class="
-                        hasCoverMetaIn
-                        ">
+   <div id="main" <?php if ($this->fields->fm){ ?>data-behavior="3" class="hasCover                         hasCoverMetaOut"<?php }else{ ?>
+ <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>data-behavior="<?php $this->options->css(); ?>"<?php };?>class="hasCoverMetaIn"<?php };?> >
 
 
 
