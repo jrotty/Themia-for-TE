@@ -84,7 +84,7 @@ content="<?php showThumbnail($this); ?>"<?php else: ?>
 
 
 
-<header id="header" <?php if ($this->fields->fm){ ?>data-behavior="3"<?php }else{ ?>
+<header id="header" <?php if ($this->fields->fm){ ?>data-behavior="3" style=" opacity: 0.8;"<?php }else{ ?>
  <?php if ($this->fields->ys){ ?>data-behavior="<?php $this->fields->ys(); ?>"<?php }else{ ?>
 
 data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
