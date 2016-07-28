@@ -18,6 +18,7 @@
 <li style="display: block;">称呼：<?php $this->author() ?>  </li>
 <li style="display: block;">主页：<a href="<?php $this->author('url'); ?>"><?php $this->author('url'); ?></a></li>
 <li style="display: block;">联系：<a href="mailto:<?php $this->author('mail'); ?> " target="_blank" rel="external"><?php $this->author('mail'); ?> </a></li> 
+<li style="display: block;">用户组：<?php $this->author->group(); ?></li>
                     <?php if($this->user->hasLogin()):?><div style="float:right">
   <a href="<?php $this->options->adminUrl(); ?>profile.php" class="category-link"  target="_blank">编辑</a></div>
 <?php endif;?>
