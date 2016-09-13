@@ -1,7 +1,7 @@
        <footer id="footer" class="main-content-wrap">
 
 
-    <span class="copyrights">
+    <span class="copyrights"> 博客已萌萌哒运行<span id=span_dt_dt></span><br>
  &copy; 2016 <?php $this->options->title(); ?> /
  Power By <a  target="_blank"  href="http://typecho.org/">Typecho</a> 
 / Designed By <a  target="_blank"  href="http://qqdie.com/">Jrotty</a>
@@ -134,29 +134,11 @@ data-behavior="<?php $this->options->css(); ?>"<?php };?><?php };?>>
  <h5 id="about-card-bio"><p><?php $this->options->description() ?>
 </p>
 <SCRIPT language=javascript>
-<!--
-BirthDay1=new Date("<?php $this->options->time(); ?>");//改成你的计时日期
-today1=new Date();
-function THINPIGServerTime1(){
-today1.setTime(today1.getTime()+250);
-timeold1=(today1.getTime()-BirthDay1.getTime());
-sectimeold1=timeold1/1000
-secondsold1=Math.floor(sectimeold1);
-msPerDay1=24*60*60*1000
-e_daysold1=timeold1/msPerDay1
-daysold1=Math.floor(e_daysold1);
-e_hrsold1=(e_daysold1-daysold1)*24;
-hrsold1=Math.floor(e_hrsold1);
-e_minsold1=(e_hrsold1-hrsold1)*60;
-minsold1=Math.floor((e_hrsold1-hrsold1)*60);
-seconds1=Math.floor((e_minsold1-minsold1)*60);
-document.getElementById("djclock").innerHTML ='博客已萌萌哒运行<span style="color:#E68321">'+daysold1+"</span><strong>天</strong><span style=\"color:#E68321\">"+hrsold1+"</span><strong>小时</strong><span style=\"color:#E68321\">"+minsold1+"</span><strong>分</strong><span style=\"color:#E68321\">"+seconds1+"</span><strong>秒</strong>";
-}
-setInterval("THINPIGServerTime1()",250);
-//-->
+function show_date_time(){window.setTimeout("show_date_time()",1e3);var BirthDay=new Date("<?php $this->options->time(); ?>"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=Math.floor(e_hrsold),e_minsold=60*(e_hrsold-hrsold),minsold=Math.floor(60*(e_hrsold-hrsold)),seconds=Math.floor(60*(e_minsold-minsold));span_dt_dt.innerHTML=daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒"}
+show_date_time();
 </SCRIPT>
 
-  <span id="djclock"></span>
+
         
     </div>
 </div>
