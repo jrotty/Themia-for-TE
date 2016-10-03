@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "3.7.4");
+define("Themia_Version", "3.7.5");
 function themeConfig($form) {
   echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
@@ -249,7 +249,9 @@ return $r;
 function showThumbnail($widget)
 { 
     // 当文章无图片时的默认缩略图
-    $rand = rand(1,99); // 随机 1-99 张缩略图
+   $dir = './usr/themes/Themia/img/sj/';
+    $n=sizeof(scandir($dir))-2;
+    $rand = rand(1,$n); 
     $random = $widget->widget('Widget_Options')->themeUrl . '/img/sj/' . $rand . '.jpg'; // 随机缩略图路径
    // $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.jpg'; // 若只想要一张默认缩略图请删除本行开头的"//"
 
