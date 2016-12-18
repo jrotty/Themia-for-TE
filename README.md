@@ -24,7 +24,7 @@ http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual/
 
 历史更新记录http://forum.typecho.org/viewtopic.php?f=5&t=9184
 
-```
+```html
 <html lang="en">
     <head>
         <meta charset="utf-8">
