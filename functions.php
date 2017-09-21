@@ -1,8 +1,8 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define("Themia_Version", "3.7.5");
+define("Themia_Version", "3.7.6");
 function themeConfig($form) {
-  echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual" target="_blank">帮助与更新</a>]</p>';
+  echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual.html" target="_blank">帮助与更新</a>]</p>';
   //网站LOGO
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('博主头像地址'), _t('logo头像地址，不填写默认内置头像，这个建议用正方形的图片√'));
     $form->addInput($logoUrl);
@@ -80,8 +80,7 @@ $form->addInput($css->multiMode());
 	'Showfull' => _t('手机浏览器强制全屏，仅限于uc和QQ浏览器')
 ,'Showcolor' => _t('手机谷歌浏览器状态栏颜色渲染为白色'),
 	'kiana' => _t('kiana封印解除'),
-	'simg' => _t('全局不显示文章缩略图'),
-	'pltx' => _t('评论列表头像自动翻墙')
+	'simg' => _t('全局不显示文章缩略图')
 ,),
     array('Showcolor','bjq'), _t('工具开关'));
     $form->addInput($sidebarBlock->multiMode());
@@ -93,7 +92,7 @@ $form->addInput($css->multiMode());
 $wxUrl = new Typecho_Widget_Helper_Form_Element_Text('wxUrl', NULL, NULL, _t('微信收款二维码'), _t('这里添加收款二维码的图片地址，不添加则默认jrotty的微信二维码'));
     $form->addInput($wxUrl);
 
-  $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（最后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>只有绛木子TePostViews插件，在不清除cookie或者cookie未过期的情况下不会重复计数<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择非插件项，同时禁用Star插件，以免重复计数【不禁用的话，计数器计数会翻倍】"));
+  $jsq = new Typecho_Widget_Helper_Form_Element_Radio('jsq',array('0' => _t('不显示文章浏览次数'),'1' => _t('非插件实现'),'2' => _t('绛木子TePostViews插件')),'1',_t('文章阅读次数显示方案（最后一项需要自行安装对应插件）'),_t("在工具开关中，打开文章浏览次数，然后选择这里的方案，两款方案最终效果都一样<br>提示：非插件的方案和Hanny的Stat插件使用的是同一个数据，所以如果你曾经用的是Star插件，可以直接选择非插件项，同时禁用Star插件，以免重复计数【不禁用的话，计数器计数会翻倍】"));
     $form->addInput($jsq); 
 
  
@@ -249,9 +248,7 @@ return $r;
 function showThumbnail($widget)
 { 
     // 当文章无图片时的默认缩略图
-   $dir = './usr/themes/Themia/img/sj/';
-    $n=sizeof(scandir($dir))-2;
-    $rand = rand(1,$n); 
+    $rand = rand(1,99); 
     $random = $widget->widget('Widget_Options')->themeUrl . '/img/sj/' . $rand . '.jpg'; // 随机缩略图路径
    // $random = $widget->widget('Widget_Options')->themeUrl . '/img/mr.jpg'; // 若只想要一张默认缩略图请删除本行开头的"//"
 
@@ -279,18 +276,6 @@ echo $random;
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function theNext($widget, $default = NULL)
 {
@@ -345,4 +330,48 @@ echo $link;
 }
 }
 
+function timesince($older_date,$comment_date = false) {
+$chunks = array(
+array(86400 , '天'),
+array(3600 , '小时'),
+array(60 , '分'),
+array(1 , '秒'),
+);
+$newer_date = time();
+$since = abs($newer_date - $older_date);
+
+for ($i = 0, $j = count($chunks); $i < $j; $i++){
+$seconds = $chunks[$i][0];
+$name = $chunks[$i][1];
+if (($count = floor($since / $seconds)) != 0) break;
+}
+$output = $count.$name.'前';
+
+return $output;
+}
+//获取评论的锚点链接
+function get_comment_at($coid)
+{
+    $db   = Typecho_Db::get();
+    $prow = $db->fetchRow($db->select('parent')->from('table.comments')
+                                 ->where('coid = ? AND status = ?', $coid, 'approved'));
+    $parent = $prow['parent'];
+    if ($parent != "0") {
+        $arow = $db->fetchRow($db->select('author')->from('table.comments')
+                                     ->where('coid = ? AND status = ?', $parent, 'approved'));
+        $author = $arow['author'];
+        $href   = '<a href="#comment-' . $parent . '">@' . $author . '</a>';
+        echo $href;
+    } else {
+        echo '';
+    }
+}
+//输出评论内容
+function get_filtered_comment($coid){
+    $db   = Typecho_Db::get();
+    $rs=$db->fetchRow($db->select('text')->from('table.comments')
+                                 ->where('coid = ? AND status = ?', $coid, 'approved'));
+    $content=$rs['text'];
+    echo $content;
+}
 ?>
