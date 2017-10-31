@@ -101,8 +101,8 @@ $wxUrl = new Typecho_Widget_Helper_Form_Element_Text('wxUrl', NULL, NULL, _t('�
     $bqg = new Typecho_Widget_Helper_Form_Element_Radio('bqg',array('1' => _t('不开启版权狗'),'2' => _t('开启版权声明')),'1',_t('版权声明'),_t("对于未登录的用户复制文章内容超过42个字符时，复制的内容会自带版权声明。"));
     $form->addInput($bqg); 
  //建站时间
-    $time = new Typecho_Widget_Helper_Form_Element_Text('time', NULL, '2015/06/06', _t('博客成立时间'), _t('在这里填入博客的成立时间,格式要求，完整如填入“2015/06/06 00:00:00”或者只填写年月日“2015/06/06”。'));
-    $form->addInput($time);
+    $otime = new Typecho_Widget_Helper_Form_Element_Text('otime', NULL, '2015/06/06', _t('博客成立时间'), _t('在这里填入博客的成立时间,格式要求，完整如填入“2015/06/06 00:00:00”或者只填写年月日“2015/06/06”。'));
+    $form->addInput($otime);
 
    //统计代码
 $tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL,'统计代码', _t('备案信息+统计代码'), _t('填入备案信息和cnzz等第三方统计代码'));
