@@ -47,7 +47,7 @@
 }
 
 .response {
-    font-size: .9rem
+    font-size: 1.2rem
 }
 
 
@@ -71,7 +71,7 @@
 .comment-meta {
     margin-top: 5px;
     color: #aaa;
-    font-size: .8rem
+    font-size: 1.2rem
 }
 
 .comment-meta .comment-reply,
@@ -91,7 +91,7 @@
     padding: .1rem .25rem;
     border-radius: .25rem;
     background: #eee;
-    font-size: .7rem
+    font-size: 1.2rem
 }
 
 .comment-reply a:before,
