@@ -29,12 +29,12 @@ echo $commentClass;
 ?>">
     <div id="<?php $comments->theId(); ?>">
         <?php
-            $host = '//cdn.v2ex.com';
-            $url = '/gravatar/';
-            $size = '80';
+            $host = '//gravatar.cat.net';
+            $url = '/avatar/';
+            $size = '100';
             $rating = Helper::options()->commentsAvatarRating;
             $hash = md5(strtolower($comments->mail));
-            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
+            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=mm';
         ?>
 
         <img class="avatar" src="<?php echo $avatar ?>" alt="<?php echo $comments->author; ?>" width="<?php echo $size ?>" height="<?php echo $size ?>" />
