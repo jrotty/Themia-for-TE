@@ -5,7 +5,7 @@
  * @package Themia
  * @author Jrotty
  * @version 3.8.0
- * @link http://zezeshe.com
+ * @link 
  */
 ?>
   <?php $this->need('header.php'); ?>
