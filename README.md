@@ -20,6 +20,4 @@
 
 详细介绍看下面的链接，github我比较迷茫所以有问题也去下面的链接评论
 
-http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual/
-
 历史更新记录http://forum.typecho.org/viewtopic.php?f=5&t=9184
