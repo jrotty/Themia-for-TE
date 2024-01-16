@@ -2,7 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 define("Themia_Version", "3.8.0");
 function themeConfig($form) {
-  echo '<p style="font-size:16px;text-align:center;">感谢您使用TE响应式主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font> ![<a href="http://qqdie.com/archives/with-the-help-of-themia-subject-to-update-the-manual.html" target="_blank">帮助与更新</a>]</p>';
+  echo '<p style="font-size:16px;text-align:center;">感谢您使用主题 :<font color="#4A89DC"> Themia</font><font color="#F40"> '.Themia_Version.'</font></p>';
   //网站LOGO
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('博主头像地址'), _t('logo头像地址，不填写默认内置头像，这个建议用正方形的图片√'));
     $form->addInput($logoUrl);
@@ -10,7 +10,7 @@ function themeConfig($form) {
     $bgs = new Typecho_Widget_Helper_Form_Element_Radio('bgs',array('1' => _t('博客背景使用图片'),'2' => _t('博客背景使用纯色')),'1',_t('背景设置'),_t("选择这里的背景方案，对应填写下方的‘背景图or色’，这里默认是使用图片,设置图片好看，设置颜色提高网速，看个人情况设置吧"));
     $form->addInput($bgs); 
 
-    $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('背景图or色'), _t('背景设置如果设置图片，这里就填写图片地址，如http://qqdie.com/1.jpg,背景设置如果选择的是颜色，这里就填写颜色代码如#000,这里如果不填写则默认图片或者颜色#444444'));
+    $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('背景图or色'), _t('背景设置如果设置图片，这里就填写图片地址，如http://baidu.com/1.jpg,背景设置如果选择的是颜色，这里就填写颜色代码如#000,这里如果不填写则默认图片或者颜色#444444'));
     $form->addInput($bgUrl);   
 
     $sticky_1 = new Typecho_Widget_Helper_Form_Element_Text('sticky_1',NULL, NULL,'置顶文章ID', '填写对应主题的 id 即可使某些分类的文章在置顶首页显示（例如 1）。');
@@ -101,7 +101,8 @@ $wxUrl = new Typecho_Widget_Helper_Form_Element_Text('wxUrl', NULL, NULL, _t('�
     $bqg = new Typecho_Widget_Helper_Form_Element_Radio('bqg',array('1' => _t('不开启版权狗'),'2' => _t('开启版权声明')),'1',_t('版权声明'),_t("对于未登录的用户复制文章内容超过42个字符时，复制的内容会自带版权声明。"));
     $form->addInput($bqg); 
  //建站时间
-    $otime = new Typecho_Widget_Helper_Form_Element_Text('otime', NULL, '2015/06/06', _t('博客成立时间'), _t('在这里填入博客的成立时间,格式要求，完整如填入“2015/06/06 00:00:00”或者只填写年月日“2015/06/06”。'));
+    $otime = new Typecho_Widget_Helper_Form_Element_Text('otime', NULL, '2015-06-06', _t('博客成立时间'), NULL);
+    $otime->input->setAttribute('type', 'date');
     $form->addInput($otime);
 
    //统计代码

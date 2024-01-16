@@ -109,7 +109,7 @@ text-center<?php else: ?>text-left<?php endif; ?>">
         
     <div id="erweima" style="display: inline-block">
 
-<img id="erwei_qr" src="https://api.imjad.cn/qrcode?text=<?php $this->permalink() ?>&logo=https%3A%2F%2Fapi.imjad.cn%2Fqrcode%2Flogo.png&size=200&level=M&bgcolor=%23ffffff&fgcolor=%23000000"/>
+<img id="erwei_qr" src="https://api.qinor.cn/qrcode/?text=<?php $this->permalink() ?>"/>
  <p style=" text-indent: 0em; margin-left:-0em;">文章二维码</p>
  </div>
     </div>

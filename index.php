@@ -1,11 +1,11 @@
 <?php
 /**
- *Te响应式主题 : Themia，一款个性化十分丰富，附加功能非常全面，自定义字段非常屌的华丽的响应式模板。
+ *Typecho响应式主题: Themia，一款个性化十分丰富，附加功能非常全面，自定义字段非常屌的华丽的响应式模板。
  * 
  * @package Themia
- * @author Jrotty
- * @version 3.8.0
- * @link 
+ * @author 泽泽社长
+ * @version 3.8.1
+ * @link https://github.com/jrotty/Themia-for-TE
  */
 ?>
   <?php $this->need('header.php'); ?>
